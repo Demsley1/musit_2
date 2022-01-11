@@ -1,0 +1,33 @@
+{
+  "name": "musit",
+  "version": "1.0.0",
+  "description": "A music playlist forum",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labchild/musit.git"
+  },
+  "keywords": [],
+  "author": "musit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labchild/musit/issues"
+  },
+  "homepage": "https://github.com/labchild/musit#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "passport": "^0.5.2",
+    "sequelize": "^6.13.0"
+  }
+}
