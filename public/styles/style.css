@@ -1,0 +1,141 @@
+body{
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content:space-between;
+    font-size: 20px;
+    min-height: 50px;
+    background: rgb(0, 0, 0, .85);
+    align-items: center;
+    border-bottom: 1px solid rgb(17, 16, 16, .3);
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+main {
+    min-height: 1200px;
+}
+
+textarea {
+    margin: 4px 10px;
+    min-width: 45%;
+    min-height: 100px;
+    border-radius: 8px;
+    outline: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: 0px;
+    margin-left: 200px;
+}
+
+.logo-title {
+    color: white;
+}
+
+.logo-title:hover {
+    color: rgba(150, 140, 140, 0.65);
+    text-shadow: 2px 2px 20px white;
+}
+
+.nav-buttons {
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    border-left: 1px solid rgba(255, 253, 253, 0.233);
+}
+
+.nav-buttons:hover {
+    color: rgba(10, 10, 10, 0.85);
+    text-shadow: 2px 2px 8px rgb(145, 145, 145);
+    background: rgb(253, 240, 240);
+}
+
+.home-title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.sub-text {
+    font-size:smaller;
+}
+
+.hero {
+    background-image: url("/images/concert-stock.jpeg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 800px
+}
+
+.pop-playlist {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.comment-section {
+    width: 98%;
+    min-height: 175px;
+    background: rgb(87, 5, 5, .20);
+    border: 1px solid rgb(87, 5, 5, .20);
+    margin: 4px;
+    border-radius: 5px;
+}
+
+.container {
+    min-height: 750px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.playlist-card {
+    border: 2px solid black;
+    border-radius: 8px;
+    min-height: 600px;
+    width: 30%;
+    background: rgb(8, 8, 8, .88);
+    color: white;
+    box-shadow: 5px 5px 8px 4px rgb(73, 71, 71)
+}
+
+.heart-btn {
+    height: 25px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.genre-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    min-height: 400px;
+}
+
+footer {
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgb(110, 110, 110);
+    background-color: black;
+}
