@@ -17,10 +17,13 @@
             </h1>
 
             <nav>
+                {{#if loggedIn}}
                 <a class="nav-buttons" href="/dashboard">Dashboard</a>
+                <button class="nav-buttons logout-btn" type="button" id="logout-btn">Logout</button>
+                {{else}}
                 <a class="nav-buttons" href="/login">Login</a>
                 <a class="nav-buttons" href="/signup">Signup</a>
-                <!--<button class="nav-buttons home-links" type="button" class="logout-btn">Logout</button>-->
+                {{/if}}
             </nav>
         </header>
 
@@ -32,5 +35,8 @@
             Created by Musit&copy;
         </footer>
     </body>
-    
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </html>
