@@ -119,6 +119,10 @@ nav {
     height: 25px;
 }
 
+.login-btn {
+    color: black;
+}
+
 .title {
     text-align: center;
     font-weight: bolder;
