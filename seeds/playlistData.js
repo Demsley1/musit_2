@@ -201,6 +201,156 @@ const playlistData=[
         song_title: 'The Kid LAROI & J Biebs',
         genre: 'Pop'
     },
+    {
+        artist: 'Rihanna',
+        song_title: 'Umbrella',
+        genre: 'Pop'
+    },
+    {
+        artist: 'Taylor Swift',
+        song_title: 'Shake it Off',
+        genre: 'Pop'
+    },
+    {
+        artist: 'Britney Spears',
+        song_title: 'Toxic',
+        genre: 'Pop'
+    },
+    {
+        artist: 'Adele',
+        song_title: 'Rolling in the Deep',
+        genre: 'Pop'
+    },
+    {
+        artist: 'Katy Perry',
+        song_title: 'Firework',
+        genre: 'Pop'
+    },
+    {
+        artist: 'Amy Winehouse',
+        song_title: 'Rehab',
+        genre: 'Pop'
+    },
+    {
+        artist: 'Johnny Cash',
+        song_title: 'I Walk the Line',
+        genre: 'Country'
+    },
+    {
+        artist: 'Dolly Parton',
+        song_title: 'Jolene',
+        genre: 'Country'
+    },
+    {
+        artist: 'Garth Brooks',
+        song_title: 'Friends in Low Places',
+        genre: 'Country'
+    },
+    {
+        artist: 'George Strait',
+        song_title: 'All My Ex’s Live in Texas',
+        genre: 'Country'
+    },
+    {
+        artist: 'Patsy Cline',
+        song_title: 'Walkin After Midnight',
+        genre: 'Country'
+    },
+    {
+        artist: 'Chris Stapleton',
+        song_title: 'Tennessee Whiskey',
+        genre: 'Country'
+    },
+    {
+        artist: 'Deanna Carter',
+        song_title: 'Strawberry Wine',
+        genre: 'Country'
+    },
+    {
+        artist: 'Old Crow Medicine Show',
+        song_title: 'Wagon Wheel',
+        genre: 'Country'
+    },
+    {
+        artist: 'Queen',
+        song_title: 'Bohemian Rhapsody',
+        genre: 'Rock'
+    },
+    {
+        artist: 'The Cranberries',
+        song_title: 'Zombie',
+        genre: 'Rock'
+    },
+    {
+        artist: 'Jimi Hendrix',
+        song_title: 'All Along The Watchtower',
+        genre: 'Rock'
+    },
+    {
+        artist: 'AC/DC',
+        song_title: 'Thunderstruck',
+        genre: 'Rock'
+    },
+    {
+        artist: 'The Killers',
+        song_title: 'Mr.Brightside',
+        genre: 'Rock'
+    },
+    {
+        artist: 'Billy Idol',
+        song_title: 'White Wedding -Pt.1',
+        genre: 'Rock'
+    },
+    {
+        artist: 'Foo Fighters',
+        song_title: 'Everlong',
+        genre: 'Rock'
+    },
+    {
+        artist: 'The Kingsmen',
+        song_title: 'Louie Louie',
+        genre: 'Rock'
+    },
+    {
+        artist: 'Zomby',
+        song_title: 'Fly 2',
+        genre: 'Other'
+    },
+    {
+        artist: 'UZ',
+        song_title: 'UNDERGRND',
+        genre: 'Other'
+    },
+    {
+        artist: 'Louie Zong',
+        song_title: 'Hello, World',
+        genre: 'Other'
+    },
+    {
+        artist: 'Louie Zong',
+        song_title: 'Wagon Wheel',
+        genre: 'Other'
+    },
+    {
+        artist: 'Coki',
+        song_title: 'All of a Sudden',
+        genre: 'Other'
+    },
+    {
+        artist: 'Zomboy',
+        song_title: 'Lone Wolf',
+        genre: 'Other'
+    },
+    {
+        artist: 'Foreign Beggars',
+        song_title: 'Still Getting It',
+        genre: 'Other'
+    },
+    {
+        artist: 'Flux Pavilion',
+        song_title: 'Bass Cannon',
+        genre: 'Other'
+    },
 ];
 
 const seedPlaylist = () => Playlist.bulkCreate(playlistData);
