@@ -38,7 +38,7 @@ nav {
 
 .logo {
     margin: 0px;
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .logo-title {
@@ -117,6 +117,20 @@ nav {
 
 .heart-btn {
     height: 25px;
+}
+
+.login-btn, .signUp-btn {
+    color: black;
+}
+
+.logout-btn {
+    color: white;
+    font-size: 20px;
+    background-color: rgb(0, 0, 0, .01);
+    border: none;
+    text-decoration: none;
+    border-left: 1px solid rgba(255, 253, 253, 0.233);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .title {
