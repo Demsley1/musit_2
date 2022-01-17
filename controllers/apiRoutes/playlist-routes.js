@@ -82,7 +82,7 @@ router.post('/', (req, res) => {
       artist: req.body.artist,
       song_title: req.body.song_title,
       genre: req.body.genre,
-    //   user_id: req.session.user_id
+      user_id: req.session.user_id
     })
       .then(dbPlaylistData => res.json(dbPlaylistData))
       .catch(err => {
