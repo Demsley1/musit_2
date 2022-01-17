@@ -49,22 +49,15 @@ router.get('/createplaylist', withAuth, async (req, res) => {
 });
 
 router.get('/myplaylist', async (req, res) => {
-    try {
-        const playlistData = await Playlist.findAll({
-            // where: {
-            //     id: req.session.user_id
-            // }
-        })
-        if (playlistData) {
-            const playlist = playlistData.get({ plain:true })
-            console.log(playlist)
-            res.render('myplaylist', playlist)
-        }
-       
-    }
-    catch {
-        res.json({ msg: 'Failed to retrieve playlist' })
-
-}})
+    Playlist.findAll({
+        attributes: { exclude: ['password'] }
+    }).then(dbPlaylistData => {
+        const playlist = dbPlaylistData.map(playlist => playlist.get({ plain: true }));
+        res.render('myplaylist', { playlist, loggedIn: req.session.loggedIn });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err)
+    });
+})
 
 module.exports = router;

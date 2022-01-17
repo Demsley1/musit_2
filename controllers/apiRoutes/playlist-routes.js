@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Playlist, User } = require('../../models');
 const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
 
 // api/playlists, tested ok, GET
 router.get('/', (req,res) => {
@@ -12,7 +13,7 @@ router.get('/', (req,res) => {
             'song_title',
             'genre'
         ],
-        // include: [
+        include: [
         //     // Comment model here -- attached username to comment
         //     {
         //       model: Comment,
@@ -22,11 +23,11 @@ router.get('/', (req,res) => {
         //         attributes: ['username']
         //       }
         //     },
-        //     {
-        //       model: User,
-        //       attributes: ['username']
-        //     },
-        //   ]
+            {
+              model: User,
+              attributes: ['username']
+            },
+          ]
     })
     .then(dbPlaylistData => res.json(dbPlaylistData))
     .catch(err => {
@@ -47,12 +48,12 @@ router.get('/:id', (req, res) => {
         'created_at',
         'song_title'
       ],
-    //   include: [
+      include: [
     //     // include the Comment model here:
-    //     {
-    //       model: User,
-    //       attributes: ['username']
-    //     },
+        {
+          model: User,
+          attributes: ['username']
+        },
     //     {
     //       model: Comment,
     //       attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -61,7 +62,7 @@ router.get('/:id', (req, res) => {
     //         attributes: ['username']
     //       }
     //     }
-    //   ]
+      ]
     })
       .then(dbPlaylistData => {
         if (!dbPlaylistData) {
@@ -77,7 +78,7 @@ router.get('/:id', (req, res) => {
   });
 
   // api/playlists/id, tested ok, POST
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Playlist.create({
       artist: req.body.artist,
       song_title: req.body.song_title,
@@ -92,7 +93,7 @@ router.post('/', (req, res) => {
 });
 
 // api/playlists/id, tested ok, PUT
-router.put('/:id', (req, res) => {
+router.put('/:id',  withAuth, (req, res) => {
   Playlist.update(
     {
       artist: req.body.artist,
@@ -119,7 +120,7 @@ router.put('/:id', (req, res) => {
 });
 
 // api/playlists/id, tested ok, DELETE
-router.delete('/:id', (req, res) => {
+router.delete('/:id',  withAuth, (req, res) => {
   Playlist.destroy({
     where: {
       id: req.params.id
