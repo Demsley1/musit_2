@@ -4,30 +4,38 @@
     </div>
 </section>
 
+{{>modal}}
+
 <section class="genre-list">
-    <div class="genre-con">
-        <h2 class="genre-title">Rock</h2>
+
+    <div class="card genre-con">
+        <h2 class="card-header genre-title">Rock</h2>
     </div>
-    <div class="genre-con">
-        <h2 class="genre-title">
+    <div class="card genre-con">
+        <h2 class=" card-header genre-title">
             Pop
         </h2>
     </div>
-    <div class="genre-con">
-        <h2 class="genre-title">Hip-Hop/Rap</h2>
+    <div class="card genre-con">
+        <h2 class="card-header genre-title">Hip-Hop/Rap</h2>
     </div>
-    <div class="genre-con">
-        <h2 class="genre-title">Country</h2>
+    <div class="card genre-con">
+        <h2 class="card-header genre-title">Country</h2>
     </div>
-    <div class="genre-con">
-        <h2 class="genre-title">
+    <div class="card genre-con">
+        <h2 class="card-header genre-title">
             Other<span class="sub-text">(excluded genres)</span>
         </h2>
     </div>
 </section>
 
-<section>
+<section class="side-nav">
     <nav>
+        <a class="genre-buttons" href="/genre/1">Rock</a>
+        <a class="genre-buttons" href="/genre/2">Pop</a>
+        <a class="genre-buttons" href="/genre/3">Hip-Hop</a>
+        <a class="genre-buttons" href="/genre/4">Country</a>
+        <a class="genre-buttons" href="/genre/5">Other</a>
     </nav>
 </section>
 
@@ -36,7 +44,8 @@
         Top Playlists
     </h2>
     <section class="pop-playlist">
-        <article class="playlist-card">
+        {{>playlist-container}}
+        <!--<article class="playlist-card">
             <h3 class="titles">Playlist Title</h3>
             <ul>
                 <li></li>
@@ -69,76 +78,7 @@
                     </div>
                 </form>
             </div>   
-        </article>
-
-        <article class="playlist-card">
-            <h3 class="titles">Playlist Title</h3>
-            <div class="container">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-
-            <div>
-                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
-                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
-            </div>
-
-            <div class="comment-section">
-                <div>
-                    <h4 class="titles">Comments:</h4>
-                    <div class="comment-container">
-                    </div>
-                </div>
-
-                <form class="comment-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
-                        <button type="submit" class="comment-post" id="comment-post">submit</button>
-                    </div>
-                </form>
-            </div>   
-        </article>
-
-        <article class="playlist-card">
-            <h3 class="titles">Playlist Title</h3>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-
-            <div>
-                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
-                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
-            </div>
-
-            <div class="comment-section">
-                <div>
-                    <h4 class="titles">Comments:</h4>
-                    <div class="comment-container">
-                    </div>
-                </div>
-
-                <form class="comment-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
-                        <button type="submit" class="comment-post" id="comment-post">submit</button>
-                    </div>
-                </form>
-            </div>   
-        </article>
+        </article>-->
     </section>
 </section>
+<script src="/javascript/modal.js"></script>
