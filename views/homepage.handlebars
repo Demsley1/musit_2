@@ -4,148 +4,141 @@
     </div>
 </section>
 
-<section class="container">
-    <h2 class="title">
-        Most Popular Playlists
-    </h2>
-    <section class="pop-playlist">
-        <div class="playlist-card">
-            <article>
-                <h1 class="title">Playlist Title</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-
-                <div>
-                    <button><img class="heart-btn" src="/images/heart-img.png"/></button>
-                </div>
-
-                <form class="comment-form">
-                    <div class="d-grid">
-                        <label for="comment-text" class="comment-label">Add a comment:</label>
-                        <div>
-                            <textarea name="comment-text" id="comment-text"></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary ms-3">submit</button>
-                    </div>
-                </form>
-
-                <div>
-                    <h4 class="title">Comments:</h4>
-                    <div class="comment-section">
-
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <div class="playlist-card">
-            <article>
-                <h1 class="title">Playlist Title</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-
-                <div>
-                    <button><img class="heart-btn" src="/images/heart-img.png"/></button>
-                </div>
-
-                <form class="comment-form">
-                    <div class="d-grid">
-                        <label for="comment-text" class="comment-label">Add a comment:</label>
-                        <div>
-                            <textarea name="comment-text" id="comment-text"></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary ms-3">submit</button>
-                    </div>
-                </form>
-
-                <div>
-                    <h4 class="title">Comments:</h4>
-                    <div class="comment-section">
-
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <div class="playlist-card">
-            <article>
-                <h1 class="title">Playlist Title</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-
-                <div>
-                    <button id="like-button"><img class="heart-btn" src="/images/heart-img.png"/></button>
-                </div>
-
-                <form class="comment-form">
-                    <div class="d-grid">
-                        <label for="comment-text" class="comment-label">Add a comment:</label>
-                        <div>
-                            <textarea name="comment-text" id="comment-text"></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary ms-3">submit</button>
-                    </div>
-                </form>
-
-                <div>
-                    <h4 class="title">Comments:</h4>
-                    <div class="comment-section">
-
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
+<section class="genre-list">
+    <div class="genre-con">
+        <h2 class="genre-title">Rock</h2>
+    </div>
+    <div class="genre-con">
+        <h2 class="genre-title">
+            Pop
+        </h2>
+    </div>
+    <div class="genre-con">
+        <h2 class="genre-title">Hip-Hop/Rap</h2>
+    </div>
+    <div class="genre-con">
+        <h2 class="genre-title">Country</h2>
+    </div>
+    <div class="genre-con">
+        <h2 class="genre-title">
+            Other<span class="sub-text">(excluded genres)</span>
+        </h2>
+    </div>
 </section>
 
-<section class="genre-list">
-    <div>
-        <h3>Rock</h3>
-    </div>
-    <div>
-        <h3>
-            Pop
-        </h3>
-    </div>
-    <div>
-        <h3>Hip-Hop/Rap</h3>
-    </div>
-    <div>
-        <h3>Country</h3>
-    </div>
-    <div>
-        <h3>
-            Other<span class="sub-text">(excluded genres)</span>
-        </h3>
-    </div>
+<section>
+    <nav>
+    </nav>
+</section>
+
+<section class="containers">
+    <h2 class="titles">
+        Top Playlists
+    </h2>
+    <section class="pop-playlist">
+        <article class="playlist-card">
+            <h3 class="titles">Playlist Title</h3>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <div>
+                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
+                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+            </div>
+
+            <div class="comment-section">
+                <div>
+                    <h4 class="titles">Comments:</h4>
+                    <div class="comment-container">
+
+                    </div>
+                </div>
+
+                <form class="comment-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
+                        <button type="submit" class="comment-post" id="comment-post">submit</button>
+                    </div>
+                </form>
+            </div>   
+        </article>
+
+        <article class="playlist-card">
+            <h3 class="titles">Playlist Title</h3>
+            <div class="container">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div>
+                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
+                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+            </div>
+
+            <div class="comment-section">
+                <div>
+                    <h4 class="titles">Comments:</h4>
+                    <div class="comment-container">
+                    </div>
+                </div>
+
+                <form class="comment-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
+                        <button type="submit" class="comment-post" id="comment-post">submit</button>
+                    </div>
+                </form>
+            </div>   
+        </article>
+
+        <article class="playlist-card">
+            <h3 class="titles">Playlist Title</h3>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <div>
+                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
+                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+            </div>
+
+            <div class="comment-section">
+                <div>
+                    <h4 class="titles">Comments:</h4>
+                    <div class="comment-container">
+                    </div>
+                </div>
+
+                <form class="comment-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
+                        <button type="submit" class="comment-post" id="comment-post">submit</button>
+                    </div>
+                </form>
+            </div>   
+        </article>
+    </section>
 </section>
