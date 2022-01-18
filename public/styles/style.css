@@ -63,6 +63,11 @@ li {
     margin-left: 150px;
 }
 
+.logo-image {
+    margin: 5px 0;
+    height: 65px;
+}
+
 .logo-title {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: black;
@@ -204,12 +209,13 @@ li {
 
 .genre-con {
     min-width: 18%;
+    box-shadow: 5px 5px 10px 2px rgba(85, 85, 85, 0.473);
 }
 
 .genre-title {
     display: inline-flex;
     justify-content: center;
-    background: rgb(128, 128, 128);
+    background: rgb(128, 128, 128, .3);
 }
 
 /* Genre Nav Elements */

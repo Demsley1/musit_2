@@ -44,41 +44,9 @@
         Top Playlists
     </h2>
     <section class="pop-playlist">
+        {{#each playlists as |playlist|}}
         {{>playlist-container}}
-        <!--<article class="playlist-card">
-            <h3 class="titles">Playlist Title</h3>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-
-            <div>
-                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
-                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
-            </div>
-
-            <div class="comment-section">
-                <div>
-                    <h4 class="titles">Comments:</h4>
-                    <div class="comment-container">
-
-                    </div>
-                </div>
-
-                <form class="comment-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
-                        <button type="submit" class="comment-post" id="comment-post">submit</button>
-                    </div>
-                </form>
-            </div>   
-        </article>-->
+        {{/each}}
     </section>
 </section>
 <script src="/javascript/modal.js"></script>
