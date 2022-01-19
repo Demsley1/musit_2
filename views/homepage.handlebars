@@ -4,6 +4,7 @@
     </div>
 </section>
 
+
 {{>modal}}
 
 <section class="genre-list">
@@ -24,6 +25,7 @@
     </div>
     <div class="card genre-con">
         <h2 class="card-header genre-title">
+
             Other<span class="sub-text">(excluded genres)</span>
         </h2>
     </div>
@@ -44,6 +46,7 @@
         Top Playlists
     </h2>
     <section class="pop-playlist">
+
         {{#each playlists as |playlist|}}
         {{>playlist-container}}
         {{/each}}

@@ -42,6 +42,7 @@ nav {
 }
 
 ul {
+
     list-style-type: none;
     margin-right: 22px;
 }
@@ -50,6 +51,7 @@ li {
     padding: 18px;
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 5px
+
 }
 
 /* Header Nav elements CSS */
@@ -126,6 +128,7 @@ li {
 }
 
 /* Playlist Section Containers */
+
 .titles {
     text-align: center;
     font-weight: bolder;
