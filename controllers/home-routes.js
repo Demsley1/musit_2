@@ -1,15 +1,28 @@
 const router = require('express').Router();
-const { User, Playlist } = require('../models')
-const withAuth = require('../utils/auth');
+const { User, Playlist, Music } = require('../models');
+const sequelize = require('../config/connection.js');
 
 // until playlist routes are set up to pass that in instead of user models
 router.get('/', (req, res) => {
     Playlist.findAll({
-        attributes: ['id', 'artist', 'created_at', 'song_title', 'genre'],
-        include: [
+        limit: 3,
+        attributes: ['id',
+                     'title',
+                     'user_id',
+                     'created_at'
+                    ],
+        include:[
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Music,
+                attributes: ['id', 'artist', 'song_title', 'genre', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
     }).then(dbPlaylistData => {

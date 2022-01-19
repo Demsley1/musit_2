@@ -4,7 +4,7 @@ async function newFormHandler(event) {
     const song_title = document.getElementById('playlist-title').value
     const genre = document.getElementById('playlist-genre').value
 
-    // successfully added song to DB
+    // successfully added song to DB - currently works for single artist/song/genre but future want to be able to add all songs as one playlist
  
     const response = await fetch(`/api/playlists`, {
         method: 'POST',

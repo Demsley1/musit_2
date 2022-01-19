@@ -1,46 +1,30 @@
-<section class="hero">
-    <div class="title">
-        <h2>Your Account</h2>
+<section class="jumbotron jumbotron-fluid">
+    <div class="container account-head">
+        <h2 class="display-4 text-right">Your Account</h2>
+        <p class="lead text-right">Create a new playlist or revisit your old favorites.</p>
     </div>
 </section>
 
 <section class="containers">
-    <h2 class="titles">
+    <h2 class="title p-3 text-light border-bottom border-light">
         Your Playlists
     </h2>
-    <section class="pop-playlist">
-        <article class="playlist-card">
-            <h3 class="titles">Playlist Title</h3>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-
-            <div>
-                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
-                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+    <div class="container mt-4">
+        <div class="row m-auto">
+            <div class="dash-card col-md-3 create-btn">
+                <a href="/dashboard/createplaylist" class="btn-link">
+                    <div type="button" class="card-body m-4 text-center">
+                        <i class="fas fa-plus-circle fa-3x"></i>
+                        <h4 class="text-center p-4">New Playlist</h4>
+                    </div>
+                </a>
             </div>
 
-             <div class="comment-section">
-                <div>
-                    <h4 class="titles">Comments:</h4>
-                    <div class="comment-container">
-                    </div>
-                </div>
-
-                <form class="comment-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
-                        <button type="submit" class="comment-post" id="comment-post">submit</button>
-                    </div>
-                </form>
-            </div>   
-        </article>
-    </section>
+            {{#each playlists as |playlist|}}
+            {{>user-playlist-container}}
+            {{/each}}
+        </div>
+    </div>
 </section>
+
+<script src='./javascript/dashboard.js'></script>
