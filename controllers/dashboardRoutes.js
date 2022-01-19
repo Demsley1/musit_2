@@ -45,7 +45,7 @@ router.get('/createplaylist', withAuth, (req, res) => {
             return;
         }
         const user = userData.get({ plain: true });
-        res.render('create-playlist', { user, loggedIn: true });
+        res.render('create-playlist', { user, loggedIn: req.session.loggedIn });
     })
         .catch(err => {
             console.log(err);
