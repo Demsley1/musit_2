@@ -4,148 +4,52 @@
     </div>
 </section>
 
-<section class="container">
-    <h2 class="title">
-        Most Popular Playlists
-    </h2>
-    <section class="pop-playlist">
-        <div class="playlist-card">
-            <article>
-                <h1 class="title">Playlist Title</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
 
-                <div>
-                    <button><img class="heart-btn" src="/images/heart-img.png"/></button>
-                </div>
-
-                <form class="comment-form">
-                    <div class="d-grid">
-                        <label for="comment-text" class="comment-label">Add a comment:</label>
-                        <div>
-                            <textarea name="comment-text" id="comment-text"></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary ms-3">submit</button>
-                    </div>
-                </form>
-
-                <div>
-                    <h4 class="title">Comments:</h4>
-                    <div class="comment-section">
-
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <div class="playlist-card">
-            <article>
-                <h1 class="title">Playlist Title</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-
-                <div>
-                    <button><img class="heart-btn" src="/images/heart-img.png"/></button>
-                </div>
-
-                <form class="comment-form">
-                    <div class="d-grid">
-                        <label for="comment-text" class="comment-label">Add a comment:</label>
-                        <div>
-                            <textarea name="comment-text" id="comment-text"></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary ms-3">submit</button>
-                    </div>
-                </form>
-
-                <div>
-                    <h4 class="title">Comments:</h4>
-                    <div class="comment-section">
-
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <div class="playlist-card">
-            <article>
-                <h1 class="title">Playlist Title</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-
-                <div>
-                    <button id="like-button"><img class="heart-btn" src="/images/heart-img.png"/></button>
-                </div>
-
-                <form class="comment-form">
-                    <div class="d-grid">
-                        <label for="comment-text" class="comment-label">Add a comment:</label>
-                        <div>
-                            <textarea name="comment-text" id="comment-text"></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary ms-3">submit</button>
-                    </div>
-                </form>
-
-                <div>
-                    <h4 class="title">Comments:</h4>
-                    <div class="comment-section">
-
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-</section>
+{{>modal}}
 
 <section class="genre-list">
-    <div>
-        <h3>Rock</h3>
+
+    <div class="card genre-con">
+        <h2 class="card-header genre-title">Rock</h2>
     </div>
-    <div>
-        <h3>
+    <div class="card genre-con">
+        <h2 class=" card-header genre-title">
             Pop
-        </h3>
+        </h2>
     </div>
-    <div>
-        <h3>Hip-Hop/Rap</h3>
+    <div class="card genre-con">
+        <h2 class="card-header genre-title">Hip-Hop/Rap</h2>
     </div>
-    <div>
-        <h3>Country</h3>
+    <div class="card genre-con">
+        <h2 class="card-header genre-title">Country</h2>
     </div>
-    <div>
-        <h3>
+    <div class="card genre-con">
+        <h2 class="card-header genre-title">
+
             Other<span class="sub-text">(excluded genres)</span>
-        </h3>
+        </h2>
     </div>
 </section>
+
+<section class="side-nav">
+    <nav>
+        <a class="genre-buttons" href="/genre/1">Rock</a>
+        <a class="genre-buttons" href="/genre/2">Pop</a>
+        <a class="genre-buttons" href="/genre/3">Hip-Hop</a>
+        <a class="genre-buttons" href="/genre/4">Country</a>
+        <a class="genre-buttons" href="/genre/5">Other</a>
+    </nav>
+</section>
+
+<section class="containers">
+    <h2 class="titles">
+        Top Playlists
+    </h2>
+    <section class="pop-playlist">
+
+        {{#each playlists as |playlist|}}
+        {{>playlist-container}}
+        {{/each}}
+    </section>
+</section>
+<script src="/javascript/modal.js"></script>

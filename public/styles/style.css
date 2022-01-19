@@ -1,3 +1,4 @@
+/* Main elements CSS */
 body{
     color: black;
     padding: 0;
@@ -9,14 +10,18 @@ header {
     justify-content:space-between;
     font-size: 20px;
     min-height: 50px;
-    background: rgb(0, 0, 0, .85);
+    background-image: url("/images/bwconcert.jpg");
+    background-position: 80%;
+    background-size: cover;
+    background-attachment: fixed;
     align-items: center;
-    border-bottom: 1px solid rgb(17, 16, 16, .3);
+    z-index: 9999;
+    top: 0;
 }
 
 a {
     text-decoration: none;
-    color:white;
+    color:black;
 }
 
 main {
@@ -36,34 +41,68 @@ nav {
     justify-content: space-between;
 }
 
+ul {
+
+    list-style-type: none;
+    margin-right: 22px;
+}
+
+li {
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 5px
+
+}
+
+/* Header Nav elements CSS */
+.icons {
+    height: 15px;
+    max-width: 15px;
+}
+
 .logo {
     margin: 0px;
     margin-left: 150px;
 }
 
+.logo-image {
+    margin: 5px 0;
+    height: 65px;
+}
+
 .logo-title {
-    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
 }
 
 .logo-title:hover {
-    color: rgba(150, 140, 140, 0.65);
-    text-shadow: 2px 2px 20px white;
+    color: rgb(22, 22, 22, .40);
+    text-shadow: 2px 2px 12px rgb(145, 143, 143);
 }
 
-.nav-buttons {
-    padding: 0 8px;
+.logout-btn, .nav-buttons {
+    font-size: 15px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    min-height: 50px;
-    border-left: 1px solid rgba(255, 253, 253, 0.233);
+    color: black;
+    background-color: rgb(0, 0, 0, .01);
+    height: 40px;
+    width: 85px;
+    text-decoration: none;
+    border: 1px solid rgb(240, 165, 0, .35);
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    margin: 0 2px;
 }
 
 .nav-buttons:hover {
     color: rgba(10, 10, 10, 0.85);
-    text-shadow: 2px 2px 8px rgb(145, 145, 145);
+    box-shadow: 3px 3px 12px 2px rgb(230, 226, 226);
     background: rgb(253, 240, 240);
 }
 
+/* Hero Section CSS */
 .home-title {
     display: flex;
     justify-content: center;
@@ -73,83 +112,216 @@ nav {
     font-family:Georgia, 'Times New Roman', Times, serif
 }
 
-.sub-text {
-    font-size:smaller;
+.hero {
+    display: flex;
+    justify-content: center;
+    background-image: url("/images/bwconcert.jpg");
+    background-position: 80%;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 800px
 }
 
-.hero {
-    background-image: url("/images/concert-stock.jpeg");
+.sub-text {
+    font-size: 15px;
+}
+
+/* Playlist Section Containers */
+
+.titles {
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(240, 165, 0, .65);
+}
+
+.containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/images/sound-waves.jpg");
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 800px
+    min-height: 900px;
 }
 
 .pop-playlist {
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
 }
 
+.playlist-card {
+    border: 1px solid black;
+    border-radius: 8px;
+    min-height: 750px;
+    width: 30%;
+    background-color: rgb(0, 0, 0, .6);
+    box-shadow: 5px 5px 8px 4px rgb(73, 71, 71);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* Playlist Section Elements */
+.heart-icon, .comment-icon {
+    height: 25px;
+}
+
+.heart-btn, .comment-btn {
+    background-color: rgb(0, 0, 0, .01);
+    border: none;
+    text-decoration: none;
+}
+
+/* Comments CSS */
 .comment-section {
-    width: 98%;
-    min-height: 175px;
-    background: rgb(87, 5, 5, .20);
+    height: 100%;
+    display: grid;
+    align-content: space-between;
+    margin-top: auto;
+}
+
+.comment-container {
+    width: auto;
+    height: auto;
+    background: rgb(51, 71, 86, .6);
     border: 1px solid rgb(87, 5, 5, .20);
     margin: 4px;
     border-radius: 5px;
 }
 
-.container {
-    min-height: 750px;
-    margin: 20px;
-    padding: 10px;
+.comment-post {
+    text-decoration: none;
+    border: 1px solid rgba(128, 128, 128, 0.342);
+    border-radius: 0 5px 5px 0;
+    background-color: rgb(248, 240, 240);
+    color: rgba(0, 0, 196, 0.808);
+    
 }
 
-.playlist-card {
-    border: 2px solid black;
-    border-radius: 8px;
+/* Genre Section CSS */
+.genre-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px 0;
     min-height: 600px;
-    width: 30%;
-    background: rgb(8, 8, 8, .88);
-    color: white;
-    box-shadow: 5px 5px 8px 4px rgb(73, 71, 71)
 }
 
-.heart-btn {
-    height: 25px;
+.genre-con {
+    min-width: 18%;
+    box-shadow: 5px 5px 10px 2px rgba(85, 85, 85, 0.473);
 }
 
+.genre-title {
+    display: inline-flex;
+    justify-content: center;
+    background: rgb(128, 128, 128, .3);
+}
+
+/* Genre Nav Elements */
+.side-nav {
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 60px;
+    height: 300px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999999;
+}
+
+.side-nav nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.genre-buttons {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    height: 60px;
+    width: 100%;
+    color: rgb(240, 165, 0);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.genre-buttons:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Form Pages CSS*/
 .login-btn, .signUp-btn {
     color: black;
 }
 
-.logout-btn {
-    color: white;
-    font-size: 20px;
-    background-color: rgb(0, 0, 0, .01);
-    border: none;
-    text-decoration: none;
-    border-left: 1px solid rgba(255, 253, 253, 0.233);
-    font-family: 'Times New Roman', Times, serif;
+/* Modal CSS */
+.modals {
+    position: fixed;
+    display: none;
+    z-index: 1;
+    top: 15%;
+    right: 25%;
+    left: 25%;
+    bottom: 15%;
+    width: auto;
+    height: 500px;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0, .50);
+    border-radius: 5px;
 }
 
-.title {
-    text-align: center;
-    font-weight: bolder;
-}
-
-.genre-list {
+.modal-header {
     display: flex;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    min-height: 400px;
+    justify-content: space-between;
+    height: 8%;
+}
+
+.modal-contents {
+    display: flex;
+    height: 92%;
+}
+
+.modal-playlist, .modal-comments {
+    width: 50%;
+    height: 100%;
+}
+
+.modal-con {
+    background-color: rgba(187, 185, 185, 0.50);
+}
+
+.modal-comments {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-playlist li {
+    border: 1px solid rgb(0, 0, 0, .5);
+}
+
+.close {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    width: 3%
+}
+
+.close:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 footer {
     color: white;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
-    border-top: 1px solid rgb(110, 110, 110);
-    background-color: black;
+    border-top: 1px solid rgba(83, 81, 81, 0.75);
+    background-color: rgb(0, 0, 0);
 }
