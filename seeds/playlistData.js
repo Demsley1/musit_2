@@ -4,8 +4,8 @@ const playlistData=[
     {
         artist: 'The Weeknd',
         song_title: 'Sacrifice',
-        genre: 'R&B',
-        user_id: 2
+        genre: 'Other',
+        user_id: '2'
     },
     {
         artist: 'Ed Sheeran',
@@ -26,34 +26,38 @@ const playlistData=[
         user_id: 2
     },
     {
-        artist: 'The Weeknd',
+        artist: '(feat. Lil Wayne) The Weeknd',
         song_title: 'I Heard Youre Married',
         genre: 'R&B',
         user_id: 2
+
     },
     {
-        artist: 'Burna Boy',
+        artist: '(feat. Wizkid) Burna Boy',
         song_title: 'B. DOR',
-        genre: 'R&B',
-        user_id: 2
+        genre: 'Other',
+        user_id: '2'
+
     },
     {
         artist: 'Free6LACK',
         song_title: 'Rent',
-        genre: 'R&B',
-        user_id: 2
+        genre: 'Other',
+        user_id: '2'
     },
     {
         artist: 'PARTYNEXTDOOR',
         song_title: 'Make a MallPreme',
-        genre: 'R&B',
-        user_id: 2
+        genre: 'Other',
+        user_id: '2'
+
     },
     {
         artist: 'Dave Brubeck',
         song_title: 'Take Five',
         genre: 'Other',
         user_id: 2
+
     },
     {
         artist: 'Miles Davis',
@@ -71,6 +75,7 @@ const playlistData=[
         artist: 'Thelonious Monk',
         song_title: 'Round Midnight',
         genre: 'Other',
+
         user_id: 2
     },
     {
@@ -78,7 +83,7 @@ const playlistData=[
         song_title: 'My Favorite Things',
         genre: 'Other',
         user_id: 2
-    },
+},
     {
         artist: 'John Coltrane',
         song_title: 'A Love Supreme (Acknowledgment)s',
@@ -116,7 +121,7 @@ const playlistData=[
         user_id: 3
     },
     {
-        artist: 'Linkin’ park',
+        artist: 'Linkin Park',
         song_title: 'Bleed it Out',
         genre: 'Rock',
         user_id: 3
@@ -131,6 +136,7 @@ const playlistData=[
         artist: 'Guns N Roses',
         song_title: 'Sweet child of mine',
         genre: 'Rock',
+
         user_id: 3
     },
     {
@@ -242,7 +248,55 @@ const playlistData=[
         user_id: 5
     },
     {
-        artist: 'Rihanna',
+        artist: 'eevee',
+        song_title: 'Rosemary',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'The Whitest Boy Alive',
+        song_title: 'Intentions',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'Jennifer Lara',
+        song_title: 'I Am in Love',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'Mk.gee',
+        song_title: 'You',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'BAD BAD NOT GOOD',
+        song_title: 'Time moves Slow',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'Chris Botti',
+        song_title: 'La belle dame sans regrets',
+        genre: 'Other',
+        user_id: '4'
+    },
+    {
+        artist: 'Hiatus Kaiyote',
+        song_title: 'Red Room',
+        genre: 'Other',
+        user_id: '4'
+    },
+    {
+        artist: 'Beyoncé',
+        song_title: 'Single Ladies (Put a Ring on It)',
+        genre: 'Other',
+        user_id: '5'
+    },
+    {
+        artist: 'Rihanna featuring Jay-Z',
         song_title: 'Umbrella',
         genre: 'Pop',
         user_id: 5
@@ -390,30 +444,36 @@ const playlistData=[
         song_title: 'Hello, World',
         genre: 'Other',
         user_id: 1
+
     },
     {
         artist: 'Louie Zong',
         song_title: 'Wagon Wheel',
         genre: 'Other',
         user_id: 1
+
     },
     {
         artist: 'Coki',
         song_title: 'All of a Sudden',
         genre: 'Other',
         user_id: 1
+
     },
     {
         artist: 'Zomboy',
         song_title: 'Lone Wolf',
-        genre: 'Other',
+
         user_id: 1
+
     },
     {
         artist: 'Foreign Beggars',
         song_title: 'Still Getting It',
         genre: 'Other',
+
         user_id: 1
+
     },
     {
         artist: 'Flux Pavilion',
