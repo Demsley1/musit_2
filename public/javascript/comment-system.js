@@ -14,30 +14,12 @@ commentBtn.addEventListener('click', (e) => {
 
 function postComment(comment) {
     let data ={
-        username: username,
         comment: comment
-    }
-    appendToDom(data)
-    textarea.value = ''
-    broadcastComment(data)
-    function appendToDom(data) {
-        let commentData = document.createElement('li')
-        commentData.classList.add('comment', 'mb-3' )
-
-        let markup =`
-        <div class="col-md-12">
-                    <ul class="comment-box">
-                        <li class="comment">
-                            <div class="card border-light mb-3"></div>
-                            <div class="card-body"
-                            <h5>${data.username}</h5>
-                            <p>${data.comment}</p>
-                        </li>
-                    </ul>
-            </div>`
-            commentBox.append(ltag)
-    }
-
-    function broadcastComment(data) {
+        }
+        const response = await fetch("/comments", {
+            method: "POST",
+            body: JSON.stringify(data)
+        })
         
-}
+    }
+   
