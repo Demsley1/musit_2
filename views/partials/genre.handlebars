@@ -1,0 +1,9 @@
+<section class="genre-container">
+    <h2> This is all our latest {{genre}} hits!</h2>
+    <ul>
+    {{#each Playlist}} 
+    <li class="artist title"><h2>{{artist}}</h2></li>
+    <li>{{song_title}}</li>
+    {{/each}} 
+    </ul>
+</section>
