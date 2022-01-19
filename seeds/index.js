@@ -5,9 +5,9 @@ const seedPlaylist = require('./playlistData');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedPlaylist();
-
   await seedUser();
+
+  await seedPlaylist();
 
   process.exit(0);
 };
