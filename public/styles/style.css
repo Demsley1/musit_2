@@ -325,3 +325,47 @@ footer {
     border-top: 1px solid rgba(83, 81, 81, 0.75);
     background-color: rgb(0, 0, 0);
 }
+
+/* dashboard specific styles */
+.jumbotron {
+    padding-top: 15vh;
+    background-image: url("/images/bwconcert.jpg");
+    background-position: 80%;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+.account-head {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+    border:rgba(0, 0, 0, .01) solid 10vw;
+    text-align: right;
+}
+
+.dash-card {
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0, .6);
+    box-shadow: 5px 5px 8px 4px rgb(73, 71, 71);
+    color: white;
+    margin: 2vh 2vw;
+   /* flex: 0 0 28%; */
+}
+
+.edit-btn {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+.edit-btn:hover {
+    color: #fff;
+    background-color: rgb(0, 0, 0, .6);
+    border: #fff solid 1px;
+}
+
+.create-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
