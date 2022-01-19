@@ -4,353 +4,483 @@ const playlistData=[
     {
         artist: 'The Weeknd',
         song_title: 'Sacrifice',
-        genre: 'R&B'
+        genre: 'Other',
+        user_id: '2'
     },
     {
         artist: 'Ed Sheeran',
         song_title: 'PeruFireboy DML',
-        genre: 'R&B'
+        genre: 'R&B',
+        user_id: 2
     },
     {
-        artist: 'USZA',
-        song_title: 'I Hate',
-        genre: 'R&B'
+        artist: 'SZA',
+        song_title: 'I Hate U',
+        genre: 'R&B',
+        user_id: 2
     },
     {
         artist: 'Blxst',
         song_title: 'About You',
-        genre: 'R&B'
+        genre: 'R&B',
+        user_id: 2
     },
     {
-        artist: 'The Weeknd',
+        artist: '(feat. Lil Wayne) The Weeknd',
         song_title: 'I Heard Youre Married',
-        genre: 'R&B'
+        genre: 'R&B',
+        user_id: 2
+
     },
     {
-        artist: 'Burna Boy',
+        artist: '(feat. Wizkid) Burna Boy',
         song_title: 'B. DOR',
-        genre: 'R&B'
+        genre: 'Other',
+        user_id: '2'
+
     },
     {
         artist: 'Free6LACK',
         song_title: 'Rent',
-        genre: 'R&B'
+        genre: 'Other',
+        user_id: '2'
     },
     {
         artist: 'PARTYNEXTDOOR',
         song_title: 'Make a MallPreme',
-        genre: 'R&B'
+        genre: 'Other',
+        user_id: '2'
+
     },
     {
         artist: 'Dave Brubeck',
         song_title: 'Take Five',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 2
+
     },
     {
         artist: 'Miles Davis',
         song_title: 'So What',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 2
     },
     {
         artist: 'Duke Ellington',
         song_title: 'Take The A Train',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 2
     },
     {
         artist: 'Thelonious Monk',
         song_title: 'Round Midnight',
-        genre: 'Other'
+        genre: 'Other',
+
+        user_id: 2
     },
     {
         artist: 'John Coltrane',
         song_title: 'My Favorite Things',
-        genre: 'Other'
-    },
+        genre: 'Other',
+        user_id: 2
+},
     {
         artist: 'John Coltrane',
         song_title: 'A Love Supreme (Acknowledgment)s',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 2
     },
     {
         artist: 'Miles Davis',
         song_title: 'All Blues',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 2
     },
     {
         artist: 'Weather Report',
         song_title: 'Birdland',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 2
     },
     {
         artist: 'Panic at the disco',
         song_title: 'High Hopes',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 3
     },
     {
         artist: 'AWOLNATION',
         song_title: 'Sail',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 3
     },
     {
         artist: 'Nirvana',
         song_title: 'smells like teen spirit',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 3
     },
     {
-        artist: 'Linkin’ park',
+        artist: 'Linkin Park',
         song_title: 'Bleed it Out',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 3
     },
     {
         artist: 'Bon Jovi',
-        song_title: 'Livin’ on a Prayer',
-        genre: 'Rock'
+        song_title: "Livin' on a Prayer",
+        genre: 'Rock',
+        user_id: 3
     },
     {
         artist: 'Guns N Roses',
         song_title: 'Sweet child of mine',
-        genre: 'Rock'
+        genre: 'Rock',
+
+        user_id: 3
     },
     {
         artist: 'Foo Fighters',
         song_title: 'The Pretender l',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 3
     },
     {
         artist: '3 Doors Down',
-        song_title: 'It’s not my Tiime',
-        genre: 'Rock'
+        song_title: "It's not my Time",
+        genre: 'Rock',
+        user_id: 3
     },
     {
         artist: 'Jay-z',
-        song_title: 'U don’t know',
-        genre: 'Rap'
+        song_title: "U don't know",
+        genre: 'Rap',
+        user_id: 3
     },
     {
         artist: 'Dr Dre',
         song_title: 'still D.R.E',
-        genre: 'Rap'
+        genre: 'Rap',
+        user_id: 3
     },
     {
         artist: '50 cent',
         song_title: 'In da club',
-        genre: 'Rap'
+        genre: 'Rap',
+        user_id: 3
     },
     {
         artist: 'Future',
         song_title: 'March Madness',
-        genre: 'Rap'
+        genre: 'Rap',
+        user_id: 3
     },
     {
         artist: 'Drake',
         song_title: '6pm in New York',
-        genre: 'Rap'
+        genre: 'Rap',
+        user_id: 3
     },
     {
         artist: 'J. Cole',
         song_title: 'Middle Child',
-        genre: 'Rap'
+        genre: 'Rap',
+        user_id: 3
     },
     {
         artist: 'Wale',
         song_title: 'On Chill',
-        genre: 'Rap'
+        genre: 'Rap',
+        user_id: 3
     },
     {
         artist: 'Tupac',
         song_title: 'Hail Mary',
-        genre: 'Rap'
+        genre: 'Rap',
+        user_id: 3
     },
     {
         artist: 'BTS',
         song_title: 'Butter',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 4
     },
     {
         artist: 'Doja Cat & SZA',
         song_title: 'Kiss Me More',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 4
     },
     {
         artist: 'Justin Bieber',
         song_title: 'Peaches',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 4
     },
     {
         artist: 'Lil Nas X',
         song_title: 'MONTERO',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 4
     },
     {
         artist: 'The Weeknd',
         song_title: 'Blinding Lights',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 4
     },
     {
         artist: 'STAY',
         song_title: 'The Kid LAROI & J Biebs',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 4
     },
     {
         artist: 'Beyoncé',
         song_title: 'Single Ladies',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 4
     },
     {
         artist: 'STAY',
         song_title: 'The Kid LAROI & J Biebs',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 5
     },
     {
-        artist: 'Rihanna',
+        artist: 'eevee',
+        song_title: 'Rosemary',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'The Whitest Boy Alive',
+        song_title: 'Intentions',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'Jennifer Lara',
+        song_title: 'I Am in Love',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'Mk.gee',
+        song_title: 'You',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'BAD BAD NOT GOOD',
+        song_title: 'Time moves Slow',
+        genre: 'Other',
+        user_id: 4
+    },
+    {
+        artist: 'Chris Botti',
+        song_title: 'La belle dame sans regrets',
+        genre: 'Other',
+        user_id: '4'
+    },
+    {
+        artist: 'Hiatus Kaiyote',
+        song_title: 'Red Room',
+        genre: 'Other',
+        user_id: '4'
+    },
+    {
+        artist: 'Beyoncé',
+        song_title: 'Single Ladies (Put a Ring on It)',
+        genre: 'Other',
+        user_id: '5'
+    },
+    {
+        artist: 'Rihanna featuring Jay-Z',
         song_title: 'Umbrella',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 5
     },
     {
         artist: 'Taylor Swift',
         song_title: 'Shake it Off',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 5
     },
     {
         artist: 'Britney Spears',
         song_title: 'Toxic',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 5
     },
     {
         artist: 'Adele',
         song_title: 'Rolling in the Deep',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 5
     },
     {
         artist: 'Katy Perry',
         song_title: 'Firework',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 5
     },
     {
         artist: 'Amy Winehouse',
         song_title: 'Rehab',
-        genre: 'Pop'
+        genre: 'Pop',
+        user_id: 5
     },
     {
         artist: 'Johnny Cash',
         song_title: 'I Walk the Line',
-        genre: 'Country'
+        genre: 'Country',
+        user_id: 5
     },
     {
         artist: 'Dolly Parton',
         song_title: 'Jolene',
-        genre: 'Country'
+        genre: 'Country',
+        user_id: 5
     },
     {
         artist: 'Garth Brooks',
         song_title: 'Friends in Low Places',
-        genre: 'Country'
+        genre: 'Country',
+        user_id: 5
     },
     {
         artist: 'George Strait',
-        song_title: 'All My Ex’s Live in Texas',
-        genre: 'Country'
+        song_title: "All My Ex's Live in Texas",
+        genre: 'Country',
+        user_id: 5
     },
     {
         artist: 'Patsy Cline',
         song_title: 'Walkin After Midnight',
-        genre: 'Country'
+        genre: 'Country',
+        user_id: 5
     },
     {
         artist: 'Chris Stapleton',
         song_title: 'Tennessee Whiskey',
-        genre: 'Country'
+        genre: 'Country',
+        user_id: 5
     },
     {
         artist: 'Deanna Carter',
         song_title: 'Strawberry Wine',
-        genre: 'Country'
+        genre: 'Country',
+        user_id: 5
     },
     {
         artist: 'Old Crow Medicine Show',
         song_title: 'Wagon Wheel',
-        genre: 'Country'
+        genre: 'Country',
+        user_id: 5
     },
     {
         artist: 'Queen',
         song_title: 'Bohemian Rhapsody',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 1
     },
     {
         artist: 'The Cranberries',
         song_title: 'Zombie',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 1
     },
     {
         artist: 'Jimi Hendrix',
         song_title: 'All Along The Watchtower',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 1
     },
     {
         artist: 'AC/DC',
         song_title: 'Thunderstruck',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 1
     },
     {
         artist: 'The Killers',
         song_title: 'Mr.Brightside',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 1
     },
     {
         artist: 'Billy Idol',
         song_title: 'White Wedding -Pt.1',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 1
     },
     {
         artist: 'Foo Fighters',
         song_title: 'Everlong',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 1
     },
     {
         artist: 'The Kingsmen',
         song_title: 'Louie Louie',
-        genre: 'Rock'
+        genre: 'Rock',
+        user_id: 1
     },
     {
         artist: 'Zomby',
         song_title: 'Fly 2',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 1
     },
     {
         artist: 'UZ',
         song_title: 'UNDERGRND',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 1
     },
     {
         artist: 'Louie Zong',
         song_title: 'Hello, World',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 1
+
     },
     {
         artist: 'Louie Zong',
         song_title: 'Wagon Wheel',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 1
+
     },
     {
         artist: 'Coki',
         song_title: 'All of a Sudden',
-        genre: 'Other'
+        genre: 'Other',
+        user_id: 1
+
     },
     {
         artist: 'Zomboy',
         song_title: 'Lone Wolf',
-        genre: 'Other'
+
+        user_id: 1
+
     },
     {
         artist: 'Foreign Beggars',
         song_title: 'Still Getting It',
-        genre: 'Other'
+        genre: 'Other',
+
+        user_id: 1
+
     },
     {
         artist: 'Flux Pavilion',
         song_title: 'Bass Cannon',
-        genre: 'Other'
-    },
+        genre: 'Other',
+        user_id: 1
+    }
 ];
 
 const seedPlaylist = () => Playlist.bulkCreate(playlistData);
