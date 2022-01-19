@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+/*const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Comments extends Model {}
@@ -16,7 +16,7 @@ Comments.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-      userid: {
+      user_id: {
         type: DataTypes.STRING,
         allowNull: false,
         references: {
@@ -33,4 +33,4 @@ Comments.init(
   }
 );
 
-module.exports = Comments;
+module.exports = Comments;*/
