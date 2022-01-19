@@ -1,7 +1,7 @@
 const Music = require('./Music');
 const User = require('./User');
 const Playlist = require('./Playlist');
-const { uniqueId } = require('lodash');
+const Comments = require('./Comments')
 
 // create associations
 User.hasMany(Playlist, {
@@ -29,4 +29,4 @@ Music.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = { Music, Playlist, User };
+module.exports = { Music, Playlist, User , Comments }
