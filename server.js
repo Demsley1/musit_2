@@ -24,10 +24,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 
-const helpers = require('./utils/helpers');
-
-const hbs = exphbs.create({ helpers });
-
 app.use(routes);
 
 app.engine('handlebars', hbs.engine);

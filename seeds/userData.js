@@ -25,8 +25,8 @@ const userData=[
         username: 'R.B',
         email: 'test5@gmail.com',
         password: 'password'
-    }
-    /*{
+    },
+    {
         username: 'Ash',
         email: 'test6@gmail.com',
         password: 'password'
@@ -35,11 +35,7 @@ const userData=[
         username: 'Roby',
         email: 'test7@gmail.com',
         password: 'password'
-<<<<<<< HEAD
-    }*/
-=======
     }
->>>>>>> 3739e302b596547686e8581ba0b1c27b14b7aa58
 
 ]
 
