@@ -11,8 +11,8 @@ router.get('/', (req,res) => {
             'created_at',
             'song_title',
             'genre',
-            'playlist_id',
-            'user_id'
+            'user_id',
+            'playlist_id'
         ],
         include: [
           {

@@ -1,8 +1,21 @@
 <article class="playlist-card">
-    <h3 class="titles">Title</h3>
+    <h3 class="titles">{{title}}</h3>
         <ul>
-            <li></li>
+            {{#each music}}
+            <li class="playlist-items">
+                <div class="d-flex justify-content-evenly">
+                <p>{{artist}}:  {{song_title}}</p>
+                <p>Genre: {{genre}}</p>
+                </div>
+            </li>
+            {{/each}}
         </ul>
+        <div>
+            <h4 class="titles"> Username:   {{user.username}}</h4>
+            <span>{{format_date created_at}}</span>
+        </div>
+
+        
 
         <div>
             <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>

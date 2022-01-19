@@ -1,6 +1,7 @@
 const Music = require('./Music');
 const User = require('./User');
 const Playlist = require('./Playlist');
+const { uniqueId } = require('lodash');
 
 // create associations
 User.hasMany(Playlist, {
@@ -8,7 +9,7 @@ User.hasMany(Playlist, {
 });
 
 // Playlist will become a through table
-Playlist.belongsToMany(User, {
+Playlist.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
@@ -16,9 +17,34 @@ Playlist.hasMany(Music, {
     foreignKey: 'playlist_id'
 });
 
-Music.belongsToMany(Playlist, {
+Music.belongsTo(Playlist, {
     foreignKey: 'playlist_id'
 });
 
+User.hasMany(Music, {
+    foreignKey: 'user_id'
+});
+
+Music.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+/*Playlist.hasMany(Music, {
+    foreignKey: 'playlist_id'
+});
+
+Music.belongsToMany(Playlist, {
+    through: 'music_playlist',
+    foreignKey: 'playlist_id' 
+});
+
+User.hasMany(Music, {
+    foreignKey: 'user_id'
+});
+
+Music.belongsToMany(User, {
+    through: 'music_user',
+    foreignKey: 'user_id',
+});*/
 
 module.exports = { Music, Playlist, User };

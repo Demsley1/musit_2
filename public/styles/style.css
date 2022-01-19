@@ -173,6 +173,11 @@ li {
     text-decoration: none;
 }
 
+.playlist-items {
+    font-size: 14px;
+    padding: 0px;
+}
+
 /* Comments CSS */
 .comment-section {
     height: 100%;

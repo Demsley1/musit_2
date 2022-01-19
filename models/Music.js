@@ -24,18 +24,18 @@ Music.init(
         type: DataTypes.STRING,
         allowNull: false,  
     },
-    playlist_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'playlist',
-        key: 'id'
-      }
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id'
+        key: 'id',
+      }
+    },
+    playlist_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'playlist',
+        key: 'id',
       }
     }
   },
