@@ -1,0 +1,46 @@
+<Section>
+    <div>
+        <h4>Leave a Comment:</h4>
+    </div>
+
+    <div>
+        <form class="comment-form">
+            <div>
+                <label for="comment-text" class="comment-label">Comment:</label>
+                <textarea id="textarea" rows="2" class="form-control" />
+            </div>
+
+            {{!-- <div>
+                <label for="login-password">Password:</label>
+                <input type="password" name="login-password" id="login-password" />
+            </div>
+
+            <div>
+                <button type="submit" id="submit-login">Login</button>
+            </div>
+
+            <div> --}}
+                <div class"col-md-12">
+                <p>Want to leave a comment? Sign-up:</p>
+                <button><a id="comment-btn" class="comment-btn" href='/comments'>Post</a></button>
+            </div>
+            {{!-- change around these classes so that it fits --}}
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="comment-box">
+                        <li class="comment">
+                            <div class="card border-light mb-3"></div>
+                            <div class="card-body"
+                            <h5>Bobby</h5>
+                            {{!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Aliquid quis nemo eos autem, ipsum cupiditate cumque tempora alias quam dicta voluptate. 
+                                Quas, sapiente obcaecati rerum eaque molestiae labore velit eos.</p> --}}
+                        </li>
+                    </ul>
+            </div>
+        </form>
+    </div>
+</Section>
+<script src="/javascript/comments.js"></script>
+{{!-- Handlebars.registerPartial( --}}
+{{!-- make this into a partial so that it is being able to used over n over again--}}
