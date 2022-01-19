@@ -370,7 +370,13 @@ footer {
     border: #fff solid 1px;
 }
 
-.create-btn:hover {
+.create-btn:hover,
+.btn-link:hover {
     background-color: rgba(255, 255, 255, 0.5);
     color: #000;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: #fff;
 }
