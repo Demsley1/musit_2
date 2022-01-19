@@ -1,28 +1,55 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
+const { Playlist, Music, User, } = require('../models');
+const sequelize = require('../config/connection.js');
 
-// get route to dashboard
-// get user info (name, playlists, like history)
-// populate page with script (fetch call)
-router.get('/dashboard', withAuth, (req, res) => {
-    // if not logged in, send home
-    if (req.session.loggedIn) {
-        // render dashboard
-        res.render('dashboard');
+router.get('/', withAuth, (req, res) => {
 
-        // get session user id 
-        console.log(req.session.user_id);
-        const userId = req.session.user_id;
+    Playlist.findAll({
 
-        // build a function to populate playlists
-        // pass id to fn to retreive user playlists
-        // loop to add playlists to page 
-        return;
-    }
+        where: {
+            user_id: req.session.user_id
+        },
 
+        attributes: ['id', 'title', 'created_at'],
+        include: [
+            {
+                model: Music,
+                attributes: ['id', 'artist', 'song_title', 'genre', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            }
+        ]
+    }).then(dbPlaylistData => {
+        const playlists = dbPlaylistData.map(playlist => playlist.get({ plain: true }));
 
+        res.render('dashboard', { playlists, loggedIn: true });
+    })
 
-    res.redirect('/');
+});
+
+// create a playlist from account dash
+router.get('/createplaylist', withAuth, (req, res) => {
+    User.findOne({
+        where: {
+            id: req.session.user_id
+        },
+        attributes: {
+            exclude: ['password']
+        }
+    }).then(userData => {
+        if (!userData) {
+            res.status(400).json({ message: 'no user found' });
+            return;
+        }
+        const user = userData.get({ plain: true });
+        res.render('create-playlist', {user, loggedIn: true});
+    })
+    .catch(err => {
+        console.log(err);
+    });
 });
 
 module.exports = router;
