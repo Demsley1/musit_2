@@ -1,9 +1,10 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
 // get route to dashboard
 // get user info (name, playlists, like history)
 // populate page with script (fetch call)
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
     // if not logged in, send home
     if (req.session.loggedIn) {
         // render dashboard
