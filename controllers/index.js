@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const apiRoutes = require('./apiRoutes');
 const homeRoutes = require('./home-routes');
-const genreRoutes= require('./playlistViewpage');
+const genreRoutes= require('./genre');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
