@@ -1,5 +1,5 @@
 const router = require('express').Router();;
-const { User, Playlist } = require('../../models');
+const { User, Music, Playlist } = require('../../models');
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -19,8 +19,12 @@ router.get('/', (req, res) => {
         attributes: { exclude: ['password']},
         include: [
             {
-                model: Playlist,
-                attributes: ['id', 'artist', 'song_title', 'genre', 'created_at']
+                model: Music,
+                attributes: ['id', 'artist', 'song_title', 'genre', 'created_at', 'user_id'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
     }).then(dbUserData => {
