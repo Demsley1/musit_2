@@ -1,21 +1,45 @@
 const router = require('express').Router();
-const { User, Playlist } = require('../models')
+const { User, Playlist, Music } = require('../models');
+const sequelize = require('../config/connection.js');
 
 // until playlist routes are set up to pass that in instead of user models
 router.get('/', (req, res) => {
-    User.findAll({
-        attributes: { exclude: ['password']}
-    }).then(dbUserData => {
-        const user = dbUserData.map(user => user.get({ plain: true }));
-        res.render('homepage', { user, loggedIn: req.session.loggedIn });
+    Playlist.findAll({
+        limit: 3,
+        attributes: ['id',
+                     'title',
+                     'user_id',
+                     'created_at'
+                    ],
+        include:[
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Music,
+                attributes: ['id', 'artist', 'song_title', 'genre', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            }
+        ]
+    }).then(dbPlaylistData => {
+        const playlists = dbPlaylistData.map(playlist => playlist.get({ plain: true }));
+
+        console.log(playlists);
+             
+        res.render('homepage', { playlists, loggedIn: req.session.loggedIn });
+
     }).catch(err => {
         console.log(err);
-        res.status(500).json(err)
+        res.status(500).json(err);
     });
 });
 
 router.get('/login', (req, res) => {
-    if(req.session.loggedIn){
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
@@ -24,7 +48,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-    if(req.session.loggedIn){
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }

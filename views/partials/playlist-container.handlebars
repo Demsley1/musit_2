@@ -1,0 +1,75 @@
+<article class="playlist-card col-md-4">
+    <h3 class="titles">{{title}}</h3>
+        <ul>
+            {{#each music}}
+            <li class="playlist-items">
+                <div class="d-flex justify-content-evenly">
+                <p>{{artist}}:  {{song_title}}</p>
+                <p>Genre: {{genre}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <div>
+            <h4 class="titles"> Username:   {{user.username}}</h4>
+            <span>{{format_date created_at}}</span>
+        </div>
+
+        
+
+        <div>
+            <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
+            <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+        </div>
+
+        <div class="comment-section">
+            <div>
+                <h4 class="titles">Comments:</h4>
+                <div class="comment-container">
+
+                </div>
+            </div>
+
+            <form class="comment-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
+                    <button type="submit" class="comment-post" id="comment-post">submit</button>
+                </div>
+            </form>
+        </div>   
+</article>
+
+<!--<article class="playlist-card">
+            <h3 class="titles">Playlist Title</h3>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <div>
+                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
+                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+            </div>
+
+            <div class="comment-section">
+                <div>
+                    <h4 class="titles">Comments:</h4>
+                    <div class="comment-container">
+
+                    </div>
+                </div>
+
+                <form class="comment-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
+                        <button type="submit" class="comment-post" id="comment-post">submit</button>
+                    </div>
+                </form>
+            </div>   
+        </article>-->

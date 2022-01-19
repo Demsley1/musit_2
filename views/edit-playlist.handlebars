@@ -1,0 +1,42 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <form class="edit-playlist-form">
+     <ul>
+       <li>
+       <label for="artist">Edit Artist:</label>
+      <input class="input" name="artist" type="text" value="{{playlist.artist}}" />
+    
+        <label for="song-title">Edit Title:</label>
+      <input class="input" name="song-title" type="text" value="{{playlist.song_title}}" />
+    
+    
+       <label for="genre">Edit Genre:</label>
+      <input class="input" name="genre" type="text" value="{{playlist.genre}}" />
+    </li>
+     <ul>
+       created by you on {{format_date playlist.created_at}}
+      |
+      {{!-- <a href="/playlists/{{playlist.id}}">{{playlist.comments.length}} {{format_plural "comment" playlist.comments.length}}</a> --}}
+    </div>
+    <button type="submit">Save playlist</button>
+    <button type="button" class="delete-playlist-btn">Delete playlist</button>
+  </form>
+</article>
+
+
+{{!-- commented out until the comment section is working --}}
+{{!-- <form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div> --}}
+
+  {{!-- <div>
+    <button type="submit">add comment</button>
+  </div>
+</form> --}}
+
+{{!-- {{> comments post.comments}} --}}
+
+<script src="/javascript/edit-playlist.js"></script>
+<script src="/javascript/delete-playlist.js"></script>
+{{!-- <script src="/javascript/comment.js"></script> --}}

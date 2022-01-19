@@ -1,0 +1,27 @@
+<section class="jumbotron jumbotron-fluid">
+    <div class="container account-head">
+        <h2 class="display-4 text-right">Your Account</h2>
+        <p class="lead text-right">Create a new playlist or revisit your old favorites.</p>
+    </div>
+</section>
+
+<section class="containers">
+    <h2 class="title p-3 text-light border-bottom border-light">
+        Your Playlists
+    </h2>
+    <div class="container mt-4">
+        <div class="row m-auto">
+            <div class="dash-card col-md-3 create-btn">
+                <div type="button" class="card-body m-4 text-center">
+                    <i class="fas fa-plus-circle fa-3x"></i>
+                    <h4 class="text-center p-4">New Playlist</h4>
+                </div>
+            </div>
+
+            {{> user-playlist-container}}
+            {{> user-playlist-container}}
+            {{> user-playlist-container}}
+        </div>
+    </div>
+</section>
+</section>
