@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
         attributes: ['id', 'title', 'user_id', 'created_at'],
         include: [
             {
-            model: User,
-            attributes: ['username']
+                model: User,
+                attributes: ['username']
             },
             {
                 model: Music,
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// get /palylists/1
+// get /playlists/1
 router.get('/:id', (req, res) => {
     Playlist.findOne({
         where: {

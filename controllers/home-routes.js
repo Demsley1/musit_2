@@ -27,11 +27,8 @@ router.get('/', (req, res) => {
         ]
     }).then(dbPlaylistData => {
         const playlists = dbPlaylistData.map(playlist => playlist.get({ plain: true }));
-
-        console.log(playlists);
              
         res.render('homepage', { playlists, loggedIn: req.session.loggedIn });
-
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
