@@ -1,20 +1,30 @@
 const router = require('express').Router();
-const { User, Playlist } = require('../models')
+const { User, Music, Playlist } = require('../models')
 
+
+// Use sequelize literal to get music data from music table
 // until playlist routes are set up to pass that in instead of user models
 router.get('/', (req, res) => {
     Playlist.findAll({
-        attributes: ['id', 'artist', 'created_at', 'song_title', 'genre'],
+        attributes: ['id'],
         include: [
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Playlist,
+                attributes: ['id', 'title', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
-    }).then(dbPlaylistData => {
-        const playlists = dbPlaylistData.map(playlist => playlist.get({ plain: true }));
+    }).then(dbMusicData => {
+        const songs = dbMusicData.map(music => music.get({ plain: true }));
              
-        res.render('homepage', { playlists, loggedIn: req.session.loggedIn });
+        res.render('homepage', { songs, loggedIn: req.session.loggedIn });
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
