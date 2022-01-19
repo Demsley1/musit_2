@@ -35,7 +35,7 @@ const userData=[
         username: 'Roby',
         email: 'test7@gmail.com',
         password: 'password'
-    },
+    }
 
 ]
 
