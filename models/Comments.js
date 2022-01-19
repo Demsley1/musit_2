@@ -15,20 +15,16 @@ Comments.init(
     Comment: {
       type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id'
-      },
-      username: {
+    },
+      userid: {
         type: DataTypes.STRING,
         allowNull: false,
         references: {
             model: 'user',
-            key: 'username'
+            key: 'id'
         }
     }
-  }
-},
+  },
   {
     sequelize,
     freezeTableName: true,
@@ -37,4 +33,4 @@ Comments.init(
   }
 );
 
-module.exports = Comment;
+module.exports = Comments;
