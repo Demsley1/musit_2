@@ -42,13 +42,16 @@ nav {
 }
 
 ul {
-    list-style-type: none; 
+
+    list-style-type: none;
+    margin-right: 22px;
 }
 
 li {
     padding: 18px;
     border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px
+
 }
 
 /* Header Nav elements CSS */
@@ -60,6 +63,11 @@ li {
 .logo {
     margin: 0px;
     margin-left: 150px;
+}
+
+.logo-image {
+    margin: 5px 0;
+    height: 65px;
 }
 
 .logo-title {
@@ -120,6 +128,13 @@ li {
 }
 
 /* Playlist Section Containers */
+
+.titles {
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(240, 165, 0, .65);
+}
+
 .containers {
     display: flex;
     flex-direction: column;
@@ -140,7 +155,7 @@ li {
 .playlist-card {
     border: 1px solid black;
     border-radius: 8px;
-    min-height: 650px;
+    min-height: 750px;
     width: 30%;
     background-color: rgb(0, 0, 0, .6);
     box-shadow: 5px 5px 8px 4px rgb(73, 71, 71);
@@ -151,11 +166,6 @@ li {
 }
 
 /* Playlist Section Elements */
-.titles {
-    text-align: center;
-    font-weight: bolder;
-    color: rgb(240, 165, 0, .65);
-}
 .heart-icon, .comment-icon {
     height: 25px;
 }
@@ -167,6 +177,13 @@ li {
 }
 
 /* Comments CSS */
+.comment-section {
+    height: 100%;
+    display: grid;
+    align-content: space-between;
+    margin-top: auto;
+}
+
 .comment-container {
     width: auto;
     height: auto;
@@ -174,13 +191,6 @@ li {
     border: 1px solid rgb(87, 5, 5, .20);
     margin: 4px;
     border-radius: 5px;
-}
-
-.comment-section {
-    min-height: 400px;
-    display: grid;
-    align-content: space-between;
-    margin-top: auto;
 }
 
 .comment-post {
@@ -196,25 +206,52 @@ li {
 .genre-list {
     display: flex;
     justify-content: space-evenly;
-    align-content: flex-start;
+    margin: 15px 0;
     min-height: 600px;
-    margin: 15px 0 15px 0;
 }
 
 .genre-con {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid black;
     min-width: 18%;
-    border-radius: 10px;
+    box-shadow: 5px 5px 10px 2px rgba(85, 85, 85, 0.473);
 }
 
 .genre-title {
-    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    background: rgb(128, 128, 128, .3);
+}
+
+/* Genre Nav Elements */
+.side-nav {
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 60px;
+    height: 300px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999999;
+}
+
+.side-nav nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.genre-buttons {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    height: 60px;
     width: 100%;
-    border-radius: 10px 10px 0 0;
-    background-color: rgb(128, 128, 128, .65);
+    color: rgb(240, 165, 0);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.genre-buttons:hover {
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 /* Form Pages CSS*/
@@ -222,11 +259,69 @@ li {
     color: black;
 }
 
-footer {
+/* Modal CSS */
+.modals {
+    position: fixed;
+    display: none;
+    z-index: 1;
+    top: 15%;
+    right: 25%;
+    left: 25%;
+    bottom: 15%;
+    width: auto;
+    height: 500px;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0, .50);
+    border-radius: 5px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    height: 8%;
+}
+
+.modal-contents {
+    display: flex;
+    height: 92%;
+}
+
+.modal-playlist, .modal-comments {
+    width: 50%;
+    height: 100%;
+}
+
+.modal-con {
+    background-color: rgba(187, 185, 185, 0.50);
+}
+
+.modal-comments {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-playlist li {
+    border: 1px solid rgb(0, 0, 0, .5);
+}
+
+.close {
+    text-align: center;
     color: black;
-    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 3%
+}
+
+.close:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+footer {
+    color: white;
+    padding: 10px;
     display: flex;
     justify-content: center;
-    border-top: 1px solid rgb(110, 110, 110);
-    background-color: white;
+    border-top: 1px solid rgba(83, 81, 81, 0.75);
+    background-color: rgb(0, 0, 0);
 }
