@@ -6,13 +6,21 @@ const router = require('express').Router();
 router.get('/dashboard', (req, res) => {
     // if not logged in, send home
     if (req.session.loggedIn) {
+        // render dashboard
         res.render('dashboard');
+
+        // get session user id 
+        console.log(req.session.user_id);
+        const userId = req.session.user_id;
+
+        // build a function to populate playlists
+        // pass id to fn to retreive user playlists
+        // loop to add playlists to page 
         return;
     }
-    // render dashboard
-    // get session user id 
-    // pass id to fn to retreive user playlists
-    // loop to add playlists to page 
+
+
+
     res.redirect('/');
 });
 

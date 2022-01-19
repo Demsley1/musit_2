@@ -10,15 +10,17 @@
         Your Playlists
     </h2>
     <div class="container mt-4">
-        <div class="row">
-            <div class="card col-md-4">
+        <div class="row m-auto">
+            <div class="dash-card col-md-3 create-btn">
                 <div type="button" class="card-body m-4 text-center">
                     <i class="fas fa-plus-circle fa-3x"></i>
                     <h4 class="text-center p-4">New Playlist</h4>
                 </div>
             </div>
 
-            {{> playlist-container}}
+            {{> user-playlist-container}}
+            {{> user-playlist-container}}
+            {{> user-playlist-container}}
         </div>
     </div>
 </section>
