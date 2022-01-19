@@ -1,9 +1,16 @@
 <article class="dash-card col-md-3">
-    <span class="fas fa-edit mt-2 mx-2 p-3 edit-btn"></span>
-    <h3 class="titles">Title</h3>
+    <a href="/dashboard/edit/{{id}}" class="btn-link mt-2 mx-2 p-3 edit-btn"><span class="fas fa-edit"></span></a>
+    <h3 class="titles">{{title}}</h3>
     <div class="card-body">
         <ul>
-            <li></li>
+           {{#each music}}
+            <li class="playlist-items">
+                <div class="d-flex justify-content-evenly">
+                <p>{{artist}}:  {{song_title}}</p>
+                <p>Genre: {{genre}}</p>
+                </div>
+            </li>
+            {{/each}}
         </ul>
 
         <div>
