@@ -45,10 +45,37 @@ router.get('/createplaylist', withAuth, (req, res) => {
             return;
         }
         const user = userData.get({ plain: true });
-        res.render('create-playlist', {user, loggedIn: true});
+        res.render('create-playlist', { user, loggedIn: true });
     })
-    .catch(err => {
+        .catch(err => {
+            console.log(err);
+        });
+});
+
+router.get('/edit/:id', withAuth, (req, res) => {
+    Playlist.findByPk(req.params.id, {
+        attributes: ['id', 'title', 'user_id', 'created_at'],
+        include: [
+            {
+                model: Music,
+                attributes: ['id', 'artist', 'song_title', 'genre', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            }]
+    }).then(dbPlaylistData => {
+        if (!dbPlaylistData) {
+            res.status(404).json({ message: 'No playlist found with this id' });
+            return;
+        }
+        const playlist = dbPlaylistData.get({plain: true})
+        
+        res.render('edit-playlist', {playlist, loggedIn: true})
+
+    }).catch(err => {
         console.log(err);
+        res.status(500).json(err);
     });
 });
 
