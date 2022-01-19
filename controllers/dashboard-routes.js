@@ -3,18 +3,21 @@ const sequelize = require('../config/connection');
 const { Playlist, User, } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/myplaylist', async (req, res) => {
+
+// link:/dashboard
+router.get('/', async (req, res) => {
     Playlist.findAll({
         attributes: { exclude: ['password'] }
     }).then(dbPlaylistData => {
         const playlist = dbPlaylistData.map(playlist => playlist.get({ plain: true }));
-        res.render('myplaylist', { playlist, loggedIn: req.session.loggedIn });
+        res.render('dashboard', { playlist, loggedIn: req.session.loggedIn });
     }).catch(err => {
         console.log(err);
         res.status(500).json(err)
     });
 })
 
+// link:/dashboard/edit/id
 router.get('/edit/:id', withAuth, (req, res) => {
     Playlist.findByPk(req.params.id, {
       attributes: [
@@ -56,6 +59,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       });
   });
   
+// link:/dashboard/createplaylist
 router.get('/createplaylist', withAuth, async (req, res) => {
     try {
         const playlistData = await Playlist.findAll({
@@ -63,8 +67,10 @@ router.get('/createplaylist', withAuth, async (req, res) => {
                 id: req.session.user_id
             }
         })
-        console.log(playlistData);
-        res.render('create-playlist');
+        res.render('create-playlist',
+        {
+          loggedIn: req.session.loggedIn
+        });
     }
     catch {
         res.json({ msg: 'Failed to retrieve playlist' })
