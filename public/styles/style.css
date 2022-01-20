@@ -380,3 +380,30 @@ footer {
     text-decoration: none;
     color: #fff;
 }
+/* styles for the genre page */
+.genre-list-container{
+    display: grid;
+    grid-template-columns: repeat();
+    justify-content: center;
+    color: #000;
+    
+    list-style: none;
+}
+.genre-container{
+    background-color: rgb(217,217,217);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.genre-title{
+    display: flex;
+    text-align: center;
+    font-weight: 600;
+    padding: 1rem;
+}
+.genre-songs{
+    border: 1px solid rgb(255, 255, 255);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    
+}
