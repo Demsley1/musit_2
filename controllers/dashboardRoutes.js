@@ -10,8 +10,15 @@ router.get('/', withAuth, (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-
-        attributes: ['id', 'title', 'created_at'],
+        attributes: [
+            'id',
+            'title',
+            'created_at',
+            [
+                sequelize.literal('(SELECT COUNT(*) FROM vote WHERE playlist.id = vote.playlist_id)'),
+                'vote_count'
+            ]
+        ],
         include: [
             {
                 model: Music,
@@ -69,9 +76,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
             res.status(404).json({ message: 'No playlist found with this id' });
             return;
         }
-        const playlist = dbPlaylistData.get({plain: true})
-        
-        res.render('edit-playlist', {playlist, loggedIn: true})
+        const playlist = dbPlaylistData.get({ plain: true })
+
+        res.render('edit-playlist', { playlist, loggedIn: true })
 
     }).catch(err => {
         console.log(err);

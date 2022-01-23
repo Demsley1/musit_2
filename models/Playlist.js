@@ -1,7 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-class Playlist extends Model {};
+class Playlist extends Model {
+    // upvote method
+    static upvote(body, models) {
+        return models.Vote.create({
+            user_id: body.user_id,
+            playlist_id: body.playlist_id
+        }).then(() => {
+            return Playlist.findOne({
+                where: {
+                    id: body.playlist_id
+                },
+                attributes: ['id', 'title', 'user_id',
+                    [
+                        sequelize.literal('(SELECT COUNT(*) FROM vote WHERE playlist.id = vote.playlist_id)'),
+                        'vote_count'
+                    ]
+                ]
+            })
+        })
+    }
+};
 
 Playlist.init(
     {
