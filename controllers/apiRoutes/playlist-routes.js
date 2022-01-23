@@ -93,12 +93,16 @@ router.post('/', (req, res) => {
 
 // upvote a playlist
 router.put('/upvote', (req, res) => {
-    Playlist.upvote(req.body, { Vote })
-        .then(updatedPlaylistData => res.json(updatedPlaylistData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    // check if logged in
+    if (req.session) {
+        Playlist.upvote({ ...req.body, user_id: req.session.user_id}, { Vote })
+            .then(updatedPlaylistData => res.json(updatedPlaylistData))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
+    alert('You must be logged in to like playlists.');
 });
 
 // update /playlists/1

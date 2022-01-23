@@ -1,4 +1,4 @@
-<article class="playlist-card col-md-4">
+<article class="playlist-card col-md-4" id="{{id}}">
     <h3 class="titles">{{title}}</h3>
         <ul>
             {{#each music}}
@@ -17,10 +17,12 @@
 
         
 
-        <div>
-            <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
+        <div class="actions">
+            <button class="heart-btn pl-1"><span class="fas fa-heart"></span></button>
             <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+            {{#if vote_count}}
             <span class="likes">{{vote_count}} people like this playlist</span>
+            {{/if}}
         </div>
 
         <div class="comment-section">
@@ -39,6 +41,7 @@
             </form>
         </div>   
 </article>
+
 
 <!--<article class="playlist-card">
             <h3 class="titles">Playlist Title</h3>
