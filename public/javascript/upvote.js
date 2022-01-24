@@ -2,12 +2,11 @@
 async function handleUpvote(e) {
     e.preventDefault;
 
-    var idNeeded = e.target.parentNode.parentNode.parentNode;
-    var playlistId = idNeeded.getAttribute('id');
+    const idNeeded = e.target.parentNode.parentNode.parentNode;
+    const playlistId = idNeeded.getAttribute('id');
     console.log(playlistId);
-    //console.log('clicked! ' + playlist.id)
 
-    const response = await fetch('/api/playlists/upvote', {
+    const result = await fetch('/api/playlists/upvote', {
         method: 'PUT',
         body: JSON.stringify({
             playlist_id: playlistId
@@ -17,9 +16,12 @@ async function handleUpvote(e) {
         }
     });
 
-    if (!response.ok) {
-        alert(response.statusTest);
+    if (result.ok) {
+       console.log('you liked!');
+    } else {
+        alert(result.statusText);
     }
+
 };
 
 

@@ -1,6 +1,5 @@
-<article class="dash-card col-md-3">
-    <a href="/dashboard/edit/{{id}}" class="btn-link mt-2 mx-2 p-3 edit-btn"><span class="fas fa-edit"></span></a>
-    <h3 class="titles">{{title}}</h3>
+<article class="dash-card col-md-3" id="{{id}}">
+    <h3 class="titles">{{title}}<span><a href="/dashboard/edit/{{id}}" class="edit-btn"><span class="fas fa-edit"></span></a></span></h3>
     <div class="card-body">
         <ul>
            {{#each music}}
@@ -16,12 +15,12 @@
         <div>
             <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png" /></button>
             <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png" /></button>
-            <span class="likes">{{vote_count}} people like this playlist</span>
+            <span class="likes">{{vote_count}} like(s)</span>
         </div>
 
         <div class="comment-section">
             <div>
-                <h4 class="lead text-white-50 mt-2">Comments:</h4>
+                <h4 class="lead text-white-50 mt-2 text-center">Comments:</h4>
                 <div class="comment-container">
 
                 </div>

@@ -37,7 +37,26 @@ router.get('/', (req, res) => {
         });
 });
 
-// get /palylists/1
+router.get('/upvote', (req, res) => {
+    Vote.findAll({
+        include: [
+            {
+                model: User,
+                key: 'id'
+            },
+            {
+                model: Playlist,
+                key: 'id'
+            }
+        ]
+    }).then(dbPlaylistData => res.json(dbPlaylistData))
+    .catch(err => {
+        consolelog(err);
+        res.status(500).json(err);
+    });
+});
+
+// get /playlists/1
 router.get('/:id', (req, res) => {
     Playlist.findOne({
         where: {
@@ -91,18 +110,19 @@ router.post('/', (req, res) => {
         });
 });
 
-// upvote a playlist
+// upvote a playlist /api/playlists/upvote
 router.put('/upvote', (req, res) => {
+    console.log(req.body);
     // check if logged in
     if (req.session) {
-        Playlist.upvote({ ...req.body, user_id: req.session.user_id}, { Vote })
+        Playlist.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, User })
             .then(updatedPlaylistData => res.json(updatedPlaylistData))
             .catch(err => {
                 console.log(err);
                 res.status(500).json(err);
             });
     }
-    alert('You must be logged in to like playlists.');
+    res.json({message: 'You must be logged in to like playlists.'});
 });
 
 // update /playlists/1

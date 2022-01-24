@@ -6,11 +6,16 @@ const sequelize = require('../config/connection.js');
 router.get('/', (req, res) => {
     Playlist.findAll({
         limit: 3,
-        attributes: ['id',
-                     'title',
-                     'user_id',
-                     'created_at'
-                    ],
+        attributes: [
+            'id',
+            'title',
+            'user_id',
+            'created_at',
+            [
+                sequelize.literal('(SELECT COUNT(*) FROM vote WHERE playlist.id = vote.playlist_id)'),
+                'vote_count'
+            ]
+        ],
         include:[
             {
                 model: User,

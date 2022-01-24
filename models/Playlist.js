@@ -5,8 +5,8 @@ class Playlist extends Model {
     // upvote method
     static upvote(body, models) {
         return models.Vote.create({
-            user_id: body.user_id,
-            playlist_id: body.playlist_id
+            playlist_id: body.playlist_id,
+            user_id: body.user_id            
         }).then(() => {
             return Playlist.findOne({
                 where: {
