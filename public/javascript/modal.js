@@ -1,22 +1,22 @@
-function commentClickHandler(event) {
-    event.preventDefault();
+// get container data by id and send it in as comment data
+function modalData(clicked_id) {
+    
+    // Select all elements of page with class of modal, and iterate through each one
+    document.querySelectorAll(".modals").forEach(item => {
+        // get the attribute value of "data-modal-id", and set it to const
+       const id = item.getAttribute("data-modal-id").valueOf();
 
-    const modal = document.querySelector(".modals");
-    modal.style.display = "block";
-}
-document.querySelectorAll(".comment-btn").forEach(item => {
-    item.addEventListener('click', commentClickHandler)
-});
-
-// Exit modal form handler
-function commentExitHandler(event) {
-    event.preventDefault();
-
-    const modal= document.querySelector(".modals");
-    modal.style.display = "none";
-
+        if(clicked_id == id){
+            item.style.display = "block"
+        }
+    });
 };
 
-document.querySelectorAll(".close").forEach(x => {
-    x.addEventListener('click', commentExitHandler)
-});
+// Exit modal form handler
+function exitModal() {
+    // Find all elements with modal class, and change the style display to none
+    document.querySelectorAll(".modals").forEach(item => {
+        
+        item.style.display = "none"
+    });
+};

@@ -15,23 +15,21 @@
     </head>
     <body>
         <header>
-            <div>
-
+            <div class="space">
             </div>  
 
-            <h1 class="logo mt-4">
-                <a class="logo-title" href="/"><img class="logo-image" src="/images/musit-dk-blue.png"/> </a>
+            <h1 class="logo mt-3">
+                <a href="/"><img class="logo-image" src="/images/musit-dk-blue.png"/> </a>
             </h1>
 
             <nav>
                 {{#if loggedIn}}
-
-                <a class="nav-buttons" href="/dashboard"><img class="icons" src="/images/account.png">Dashboard</a>
+                <a class="nav-buttons" href="/dashboard"><span class="material-icons">account_circle</span>Dashboard</a>
                 <a class="nav-buttons" href="/dashboard/createplaylist"><span class="material-icons">add</span>Create Playlist</a>
-                <button class="nav-buttons logout-btn" type="button" id="logout-btn"><img class="icons" src="/images/logout.png">Logout</button>
+                <button class="nav-buttons logout-btn" type="button" id="logout-btn"><span class="material-icons">logout</span>Logout</button>
                 {{else}}
-                <a class="nav-buttons" href="/login"><img class="icons" src="./images/login.png"><span>Login</span></a>
-                <a class="nav-buttons" href="/signup"><img class="icons" src="./images/signup.png"><span>Signup</span></a>
+                <a class="nav-buttons" href="/login"><span class="material-icons">login</span>login</a>
+                <a class="nav-buttons" href="/signup"><span class="material-icons">person_add</span>Signup</a>
                 {{/if}}
             </nav>
         </header>

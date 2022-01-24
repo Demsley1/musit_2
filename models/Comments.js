@@ -1,4 +1,4 @@
-/*const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Comments extends Model {}
@@ -17,13 +17,19 @@ Comments.init(
       allowNull: false,
     },
       user_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: DataTypes.INTEGER,
         references: {
             model: 'user',
             key: 'id'
         }
-    }
+    },
+      playlist_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'playlist',
+          key: 'id'
+        }
+      }
   },
   {
     sequelize,
@@ -33,4 +39,4 @@ Comments.init(
   }
 );
 
-module.exports = Comments;*/
+module.exports = Comments;
