@@ -17,7 +17,7 @@ async function handleUpvote(e) {
     });
 
     if (result.ok) {
-       console.log('you liked!');
+        console.log('you liked!');
     } else {
         alert(result.statusText);
     }
