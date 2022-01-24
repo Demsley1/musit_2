@@ -6,7 +6,9 @@ body{
 }
 
 header {
+    width: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content:space-between;
     font-size: 20px;
     min-height: 50px;
@@ -42,7 +44,6 @@ nav {
 }
 
 ul {
-
     list-style-type: none;
     margin-right: 22px;
 }
@@ -55,6 +56,11 @@ li {
 }
 
 /* Header Nav elements CSS */
+.space {
+    width: 110px;
+    height: 0px;
+}
+
 .icons {
     height: 15px;
     max-width: 15px;
@@ -67,32 +73,23 @@ li {
 
 .logo-image {
     margin: 5px 0;
-    height: 65px;
-}
-
-.logo-title {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: black;
-}
-
-.logo-title:hover {
-    color: rgb(22, 22, 22, .40);
-    text-shadow: 2px 2px 12px rgb(145, 143, 143);
+    max-height: 60px;
 }
 
 .logout-btn, .nav-buttons {
-    font-size: 15px;
+    font-size: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: white;
     background-color: rgb(0, 0, 0, .01);
-    height: 40px;
-    width: 85px;
+    min-height: 40px;
+    width: 100%;
     text-decoration: none;
     border: 1px solid rgb(240, 165, 0, .35);
     font-family: 'Times New Roman', Times, serif;
     border-radius: 20px;
+    padding: 0 2px;
     margin: 0 2px;
 }
 
@@ -148,8 +145,10 @@ li {
 
 .pop-playlist {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
+    margin: 12px;
 }
 
 .playlist-card {
@@ -157,6 +156,7 @@ li {
     border-radius: 8px;
     min-height: 750px;
     width: 30%;
+    margin: 5px;
     background-color: rgb(0, 0, 0, .6);
     box-shadow: 5px 5px 8px 4px rgb(73, 71, 71);
     color: white;
@@ -181,7 +181,7 @@ li {
     padding: 0px;
 }
 
-/* Comments CSS */
+/* Comments Sections Styles */
 .comment-section {
     height: 100%;
     display: grid;
@@ -210,12 +210,14 @@ li {
 /* Genre Section CSS */
 .genre-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 15px 0;
     min-height: 600px;
 }
 
 .genre-con {
+    margin-top: 10px;
     min-width: 18%;
     box-shadow: 5px 5px 10px 2px rgba(85, 85, 85, 0.473);
 }
@@ -299,6 +301,7 @@ li {
 
 .modal-con {
     background-color: rgba(187, 185, 185, 0.50);
+    color: white;
 }
 
 .modal-comments {
@@ -309,12 +312,19 @@ li {
     border: 1px solid rgb(0, 0, 0, .5);
 }
 
+.modal-playlist-items {
+    padding: 0px;
+}
+
 .close {
     text-align: center;
     color: black;
     font-size: 20px;
     font-weight: bold;
-    width: 3%
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid rgb(128, 128, 128, .15);
+    box-shadow: 2px 2px 8px 1px white;
 }
 
 .close:hover {
@@ -380,30 +390,87 @@ footer {
     text-decoration: none;
     color: #fff;
 }
+
 /* styles for the genre page */
 .genre-list-container{
     display: grid;
     grid-template-columns: repeat();
     justify-content: center;
     color: #000;
-    
     list-style: none;
 }
+
 .genre-container{
     background-color: rgb(217,217,217);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .genre-title{
     display: flex;
     text-align: center;
     font-weight: 600;
     padding: 1rem;
 }
+
 .genre-songs{
     border: 1px solid rgb(255, 255, 255);
     padding: 1rem;
     margin-bottom: 1rem;
     
+}
+
+@media screen and (max-width: 750px) {
+    header {
+        justify-content: center;
+    }
+
+    ul {
+        margin: 0px;
+    }
+
+    li {
+        padding: 0px;
+    }
+
+    .logo{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 5px 0;
+        margin-left: 0px;
+    }
+
+    .nav-buttons {
+        font-size: 10px;
+    }
+
+    .playlist-card {
+        width: 90%;
+        margin: 15px;
+    }
+
+    .genre-con {
+        min-width: 80%;
+        margin: 15px;
+    }
+
+    .modal-contents {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .modal-playlist, .modal-comments {
+        width: auto;
+        height: 100%;
+    }
+
+    .modal-header {
+        width: 420px;
+    }
+
+    .modal-playlist-items {
+        font-size: 12px;
+    }
 }

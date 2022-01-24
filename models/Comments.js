@@ -12,18 +12,24 @@ Comments.init(
       primaryKey: true,
       autoIncrement: true
     },
-    Comment: {
+    comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-      userid: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      user_id: {
+        type: DataTypes.INTEGER,
         references: {
             model: 'user',
             key: 'id'
         }
-    }
+    },
+      playlist_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'playlist',
+          key: 'id'
+        }
+      }
   },
   {
     sequelize,

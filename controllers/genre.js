@@ -12,7 +12,7 @@ router.get('/1', (req, res) =>{
         // the console.log is pretty messy but I found out if I map out the array I get through the log, I end up with a results that I can use
         // I also found out that the toJSON function works in this case along with the 
         const genredata = data.map(data => data.toJSON())
-        res.render('./partials/genre', {genredata})
+        res.render('./partials/genre', {genredata, loggedIn: req.session.loggedIn })
     }).catch(err => {
         console.log(err);
         res.status(500).json(err)
@@ -27,7 +27,7 @@ router.get('/2', (req, res) =>{
     }).then( (data) =>{
         console.log(data)
         const genredata = data.map(data => data.get({ plain: true }))
-        res.render('./partials/genre', {genredata})
+        res.render('./partials/genre', {genredata, loggedIn: req.session.loggedIn })
     }).catch(err => {
         console.log(err);
         res.status(500).json(err)
@@ -42,7 +42,7 @@ router.get('/3', (req, res) =>{
     }).then( (data) =>{
         console.log(data)
         const genredata = data.map(data => data.get({ plain: true }))
-        res.render('./partials/genre', {genredata})
+        res.render('./partials/genre', {genredata, loggedIn: req.session.loggedIn })
     }).catch(err => {
         console.log(err);
         res.status(500).json(err)
@@ -57,7 +57,7 @@ router.get('/4', (req, res) =>{
     }).then( (data) =>{
         console.log(data)
         const genredata = data.map(data => data.get({ plain: true }))
-        res.render('./partials/genre', {genredata})
+        res.render('./partials/genre', {genredata, loggedIn: req.session.loggedIn })
     }).catch(err => {
         console.log(err);
         res.status(500).json(err)
@@ -72,7 +72,7 @@ router.get('/5', (req, res) =>{
     }).then( (data) =>{
         console.log(data)
         const genredata = data.map(data => data.get({ plain: true }))
-        res.render('./partials/genre', {genredata})
+        res.render('./partials/genre', {genredata, loggedIn: req.session.loggedIn })
     }).catch(err => {
         console.log(err);
         res.status(500).json(err)

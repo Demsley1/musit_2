@@ -10,16 +10,22 @@ commentBtn.addEventListener('click', (e) => {
         return
     }
     postComment(comment)
-})
+});
 
 function postComment(comment) {
     let data ={
-        comment: comment
+        comment_text: comment
         }
-        const response = await fetch("/comments", {
+        
+        const response = await fetch("/api/comments", {
             method: "POST",
             body: JSON.stringify(data)
         })
-        
+
+        if(response.ok){
+            document.location.replace('/');
+        } else {
+            alert(response.statusText);
+        }
     }
    

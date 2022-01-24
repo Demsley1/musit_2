@@ -4,18 +4,15 @@
     </div>
 </section>
 
-
-{{>modal}}
-
+<!-- Containers to hold top 10 playist title, username, and created at values per each genre-->
 <section class="genre-list">
-
-    <div class="card genre-con">
+    
+    <div class="card genre-con">       
         <h2 class="card-header genre-title">Rock</h2>
     </div>
+    
     <div class="card genre-con">
-        <h2 class=" card-header genre-title">
-            Pop
-        </h2>
+        <h2 class=" card-header genre-title">Pop</h2>
     </div>
     <div class="card genre-con">
         <h2 class="card-header genre-title">Hip-Hop/Rap</h2>
@@ -25,12 +22,12 @@
     </div>
     <div class="card genre-con">
         <h2 class="card-header genre-title">
-
             Other<span class="sub-text">(excluded genres)</span>
         </h2>
     </div>
 </section>
 
+<!-- Navigation buttons leading to a page showing allsongs/playsits by for each individual genre -->
 <section class="side-nav">
     <nav>
         <a class="genre-buttons" href="/genre/1">Rock</a>
@@ -41,15 +38,19 @@
     </nav>
 </section>
 
+<!-- Containers section holding partial for each top voted playlists, and each comment section for playlists -->
 <section class="containers">
     <h2 class="titles">
         Top Playlists
     </h2>
     <section class="pop-playlist">
 
+        <!-- iterates through playlists array, and displays object data in playlists and modal partials -->
         {{#each playlists as |playlist|}}
-        {{>playlist-container}}
-        {{/each}}
+            {{>playlist-container}}  
+            
+            {{>modal}}
+        {{/each}}       
     </section>
 </section>
 <script src="/javascript/modal.js"></script>
