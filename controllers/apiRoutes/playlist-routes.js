@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
             {
                 model: User,
                 attributes: ['username']
-            },
+            }/*,
             {
                 model: Music,
                 attributes: ['id', 'artist', 'song_title', 'genre', 'user_id', 'created_at'],
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
                     model: User,
                     attributes: ['username']
                 }
-            }
+            }*/
         ]
     }).then(dbPlaylistData => res.json(dbPlaylistData))
         .catch(err => {
@@ -111,20 +111,24 @@ router.post('/', (req, res) => {
 });
 
 // upvote a playlist /api/playlists/upvote
-router.put('/upvote', withAuth, (req, res) => {
+router.put('/upvote', (req, res) => {
     console.log(req.body);
-    Playlist.upvote(req.body, { Vote })
-        .then(updatedPlaylistData => {
-            if (!updatedPlaylistData) {
-                res.status(404).json({ message: 'No playlist found with that id' });
-                return;
-            }
-            res.json(updatedPlaylistData)
-        })
-        .catch (err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+
+    if (req.session) {
+        Playlist.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Playlist, User })
+            .then(updatedPlaylistData => {
+                if (!updatedPlaylistData) {
+                    res.status(404).json({ message: 'No playlist found with that id' });
+                    return;
+                }
+                res.json(updatedPlaylistData)
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
+    console.log('nope!');
 });
 
 // update /playlists/1
