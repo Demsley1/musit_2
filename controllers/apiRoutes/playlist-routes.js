@@ -62,7 +62,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create /playlists
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Playlist.create({
         title: req.body.title,
         user_id: req.session.user_id
@@ -74,7 +74,7 @@ router.post('/', (req, res) => {
 });
 
 // update /playlists/1
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Playlist.update(
         {
             title: req.body.title
@@ -97,7 +97,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete /playlists/1
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Playlist.destroy({
         where: {
             id: req.params.id

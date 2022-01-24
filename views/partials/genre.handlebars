@@ -1,9 +1,12 @@
 <section class="genre-container">
-    <h2> This is all our latest {{genre}} hits!</h2>
-    <ul>
-    {{#each Playlist}} 
-    <li class="artist title"><h2>{{artist}}</h2></li>
-    <li>{{song_title}}</li>
+    <h2 class="genre-title"> These are all of the songs in this genre!</h2>
+    <ul class="genre-list-container">
+{{!-- found out since I used the variable genredata when loading the genrepage I needed to call that here instead of music --}}
+    {{#each genredata}} 
+    <li class="genre-songs">
+        <h2>{{genre}}</h2>
+        <p>{{artist}}:  {{song_title}}</p> 
+    </li>
     {{/each}} 
     </ul>
 </section>

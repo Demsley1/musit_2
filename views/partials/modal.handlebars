@@ -1,21 +1,22 @@
-<div id="comment-modal" class="modals">
-  <!-- Modal content -->
+<div id="comment-modal" class="modals" data-modal-id="{{id}}">
   <div class="modal-header">
-      <h8>Favorite Playlist</h8>
-      <span class="close">&times;</span>
+      <h8>Top Playlists</h8>
+      <button class="close" onclick="exitModal()">&times;</button>
   </div>
+
+  <!-- Modal Content -->
   <div class="modal-contents">  
     <div class="modal-playlist">
-        <h3 class="titles">Playlist Title</h3>
+        <h3 class="titles">{{title}}</h3>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            {{#each music}}
+            <li class="modal-playlist-items">
+                <div class="d-flex justify-content-evenly">
+                <p>{{artist}}:  {{song_title}}</p>
+                <p>Genre: {{genre}}</p>
+                </div>
+            </li>
+            {{/each}}
         </ul>
     </div>
 
@@ -23,15 +24,18 @@
         <div class="comment-section">
             <div>
                 <h4 class="titles">Comments:</h4>
-                <div class="comment-container modal-con">
-
+                <div class="comment-container modal-con">     
+                    {{#each comments}}
+                    <div>{{user.username}}</div>
+                    <p>{{comment_text}}  | <span> Posted On:{{format_date created_at}}</span></p>
+                    {{/each}}
                 </div>
             </div>
-
+       
             <form class="comment-form">
                 <div class="input-group">
                     <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
-                    <button type="submit" class="comment-post" id="comment-post">submit</button>
+                    <button type="submit" class="comment-post"  id="comment-post" onclick="homeComments(event, {{id}})">submit</button>
                 </div>
             </form>
         </div>
@@ -39,44 +43,4 @@
     </div>
   </div>
 </div>
-
-<!-- <div id="comment-modal" class="modals">
-  <div class="modal-header">
-      <h8>Favorite Playlist</h8>
-      <span class="close">&times;</span>
-  </div>
-  <div class="modal-contents">  
-    <div class="modal-playlist">
-        <h3 class="titles">Playlist Title</h3>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-
-    <div class="modal-comments">
-        <div class="comment-section">
-            <div>
-                <h4 class="titles">Comments:</h4>
-                <div class="comment-container modal-con">
-
-                </div>
-            </div>
-
-            <form class="comment-form">
-                <div class="input-group">
-                    <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
-                    <button type="submit" class="comment-post" id="comment-post">submit</button>
-                </div>
-            </form>
-        </div>
-        
-    </div>
-  </div>
-</div>-->
+<script src="/javascript/comments.js"></script>

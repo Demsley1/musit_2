@@ -1,6 +1,7 @@
 <article class="playlist-card col-md-4">
     <h3 class="titles">{{title}}</h3>
         <ul>
+            <!-- iterates through msic array for each individual playlist-->
             {{#each music}}
             <li class="playlist-items">
                 <div class="d-flex justify-content-evenly">
@@ -15,61 +16,32 @@
             <span>{{format_date created_at}}</span>
         </div>
 
-        
-
         <div>
             <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
-            <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+            <!-- on the button click for element call the "getID()" function and pass the handlebars object id as the parameter of the function -->
+            <button class="comment-btn" onclick="modalData({{id}})"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
+   
         </div>
 
         <div class="comment-section">
             <div>
                 <h4 class="titles">Comments:</h4>
+                <!-- div container holding comments for each playlist -->
                 <div class="comment-container">
-
+                    {{#each comments}}
+                    <div>{{user.username}}</div>
+                    <p>{{comment_text}} | <span>  Posted On:{{format_date created_at}}</span></p>
+                    {{/each}}
                 </div>
             </div>
 
             <form class="comment-form">
                 <div class="input-group">
                     <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
-                    <button type="submit" class="comment-post" id="comment-post">submit</button>
+                    <!-- button that on click runs funciton that gets the playlist_id and adds comment data to table in database -->
+                    <button type="submit" class="comment-post" id="comment-post" onclick="homeComments(event, {{id}})">submit</button>
                 </div>
             </form>
         </div>   
 </article>
-
-<!--<article class="playlist-card">
-            <h3 class="titles">Playlist Title</h3>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-
-            <div>
-                <button class="heart-btn"><img class="heart-icon" src="/images/heart-img.png"/></button>
-                <button class="comment-btn"><img class="comment-icon" src="/images/comment-bubble.png"/></button>
-            </div>
-
-            <div class="comment-section">
-                <div>
-                    <h4 class="titles">Comments:</h4>
-                    <div class="comment-container">
-
-                    </div>
-                </div>
-
-                <form class="comment-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Add a Comment" name="comment-text" id="comment-text" class="form-control" aria-describedby="comment-post"></input>
-                        <button type="submit" class="comment-post" id="comment-post">submit</button>
-                    </div>
-                </form>
-            </div>   
-        </article>-->
+<script src="/javascript/comments.js"></script>
