@@ -10,19 +10,19 @@ Vote.init(
             primaryKey: true,
             autoIncrement: true
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
         playlist_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'playlist',
+                key: 'id'
+            }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
                 key: 'id'
             }
         }

@@ -50,10 +50,10 @@ router.get('/upvote', (req, res) => {
             }
         ]
     }).then(dbPlaylistData => res.json(dbPlaylistData))
-    .catch(err => {
-        consolelog(err);
-        res.status(500).json(err);
-    });
+        .catch(err => {
+            consolelog(err);
+            res.status(500).json(err);
+        });
 });
 
 // get /playlists/1
@@ -111,18 +111,20 @@ router.post('/', (req, res) => {
 });
 
 // upvote a playlist /api/playlists/upvote
-router.put('/upvote', (req, res) => {
+router.put('/upvote', withAuth, (req, res) => {
     console.log(req.body);
-    // check if logged in
-    if (req.session) {
-        Playlist.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, User })
-            .then(updatedPlaylistData => res.json(updatedPlaylistData))
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    }
-    res.json({message: 'You must be logged in to like playlists.'});
+    Playlist.upvote(req.body, { Vote })
+        .then(updatedPlaylistData => {
+            if (!updatedPlaylistData) {
+                res.status(404).json({ message: 'No playlist found with that id' });
+                return;
+            }
+            res.json(updatedPlaylistData)
+        })
+        .catch (err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // update /playlists/1
