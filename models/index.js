@@ -43,14 +43,6 @@ Playlist.belongsToMany(User, {
     foreignKey: 'playlist_id'
 });
 
-Vote.belongsTo(User, {
-    foreignKey: 'user_id'
-});
-
-Vote.belongsTo(Playlist, {
-    foreignKey: 'playlist_id'
-});
-
 User.hasMany(Vote, {
     foreignKey:'user_id'
 })

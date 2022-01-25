@@ -7,7 +7,10 @@ class Playlist extends Model {
         return models.Vote.create({
             playlist_id: body.playlist_id,
             user_id: body.user_id            
-        }).then(() => {
+        }
+
+        ).then((upvotedResponse) => {
+            console.log({upvotedResponse});
             return Playlist.findOne({
                 where: {
                     id: body.playlist_id

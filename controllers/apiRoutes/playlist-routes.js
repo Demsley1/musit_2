@@ -113,9 +113,11 @@ router.post('/', (req, res) => {
 // upvote a playlist /api/playlists/upvote
 router.put('/upvote', (req, res) => {
     console.log(req.body);
+    console.log(req.session);
+    console.log('upvote route');
 
-    if (req.session) {
-        Playlist.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Playlist, User })
+    if (req.session.user_id) {
+        Playlist.upvote({ ...req.body, user_id: req.session.user_id }, { Vote })
             .then(updatedPlaylistData => {
                 if (!updatedPlaylistData) {
                     res.status(404).json({ message: 'No playlist found with that id' });
@@ -128,7 +130,11 @@ router.put('/upvote', (req, res) => {
                 res.status(500).json(err);
             });
     }
-    console.log('nope!');
+    else {
+        res.json({ message: 'you must be logged in' });
+        console.log('nope!');
+    }
+    
 });
 
 // update /playlists/1
