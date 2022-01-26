@@ -66,7 +66,9 @@ router.post('/', withAuth, (req, res) => {
     Playlist.create({
         title: req.body.title,
         user_id: req.session.user_id
-    }).then(dbPlaylistData => res.json(dbPlaylistData))
+    }).then(dbPlaylistData => {
+        res.json(dbPlaylistData)
+     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);

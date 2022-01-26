@@ -1,8 +1,26 @@
 <article>
         <form class="new-playlist-form">
             <h3 class="text-center mt-2">Create New Playlist</h2>
+
+            <div class="text-center add-title"> 
+                <label for="playlist-title">Title:</label>
+                <input type="text" name="playlist-title" class="input" id="playlist-title" placeholder="New Playlist Title"/>
+                <button type="button" class="btn btn-outline-dark" onclick="playlistHandler(event)" id="addTitle-btn">Add Title</button>
+            </div>
     <hr>
         <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item music-form" data-id="">
+                <label for="playlist-artist">artist:</label>
+                <input class="input" id="playlist-artist" name="playlist-artist" placeholder="insert artist here" />
+                <label for="playlist-title">title:</label>
+                <input class="input" type="text" id="playlist-title" name="playlist-title"
+                    placeholder="insert song title here" />
+                <label for="playlist-genre">genre:</label>
+                <input class="input" type="text" id="playlist-genre" name="playlist-genre"
+                    placeholder="insert song genre here" />
+            </li>
+        </ul>
+        <!--<ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><label for="playlist-artist">artist:</label>
                 <input class="input" id="playlist-artist" name="playlist-artist" placeholder="insert artist here" />
                 <label for="playlist-title">title:</label>
@@ -89,18 +107,7 @@
                 <input class="input" type="text" id="playlist-genre" name="playlist-genre"
                     placeholder="insert song genre here" />
             </li>
-        </ul>
-        <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item"><label for="playlist-artist">artist:</label>
-                <input class="input" id="playlist-artist" name="playlist-artist" placeholder="insert artist here" />
-                <label for="playlist-title">title:</label>
-                <input class="input" type="text" id="playlist-title" name="playlist-title"
-                    placeholder="insert song title here" />
-                <label for="playlist-genre">genre:</label>
-                <input class="input" type="text" id="playlist-genre" name="playlist-genre"
-                    placeholder="insert song genre here" />
-            </li>
-        </ul>
+        </ul>-->
 
 
 
