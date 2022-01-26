@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Playlist, Music, User, } = require('../models');
+const { Playlist, Music, User, Comments } = require('../models');
 const sequelize = require('../config/connection.js');
 
 router.get('/', withAuth, (req, res) => {
@@ -45,7 +45,7 @@ router.get('/createplaylist', withAuth, (req, res) => {
             return;
         }
         const user = userData.get({ plain: true });
-        res.render('create-playlist', { user, loggedIn: req.session.loggedIn });
+        res.render('create-playlist', { user, loggedIn: true });
     })
         .catch(err => {
             console.log(err);
