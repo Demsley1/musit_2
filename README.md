@@ -59,13 +59,13 @@ Once you start your server, the project is ready to launch.
 To use mus<span>.</span>it online, visit [mus.it](https://still-ridge-48307.herokuapp.com/). 
 
 You can view exisiting playlists.
-![image]()
+![image](./public/images/playlist-preview.png)
 
 To like, comment, or make your own playlist, begin by creating a user profile.
-![image]()
+![image](./public/images/singup-preview.png)
 
 Then, navigate to your dashboard and click 'Create Playlist'. A form will prompt you through the steps.
-![image]()
+![image](public/images/dash-preview.png)
 
 Enjoy your new music community!
 
