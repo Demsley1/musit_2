@@ -1,29 +1,29 @@
-<Section>
+<Section class="d-grid justify-content-center">
     <div>
-        <h2>
+        <h2 class="form-title">
             LOGIN
         </h2>
     </div>
 
     <div>
         <form class="login-form">
-            <div>
+            <div class="mb-2">
                 <label for="login-email">Email:</label>
-                <input type="email" name="login-email" id="login-email" />
+                <input type="email" name="login-email" id="login-email" class="login-input" placeholder="email"/>
             </div>
 
-            <div>
+            <div class="mb-2">
                 <label for="login-password">Password:</label>
-                <input type="password" name="login-password" id="login-password" />
+                <input class="login-input" type="password" name="login-password" id="login-password" placeholder="password"/>
             </div>
 
             <div>
-                <button type="submit" id="submit-login">Login</button>
+                <button type="submit" id="submit-login" class="btn btn-outline-dark mb-2">Login</button>
             </div>
 
             <div>
                 <p>If you don't have an account yet, Sign-Up Here:</p>
-                <button><a class="signUp-btn" href='/signup'>Sign-Up</a></button>
+                <a class="btn btn-outline-dark" href='/signup'>Sign-Up</a>
             </div>
         </form>
     </div>
